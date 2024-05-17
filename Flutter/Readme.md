@@ -1,4 +1,9 @@
 # Flutter Basic To Advance
+# Dart
+## Dart is a statically typed language, we have the possibility to define a variable with a dynamic type. 
+- Everything you can place in a variable is an object, and every object is an instance of a class. Even numbers, functions, and null are objects. With the exception of null (if you enable sound null safety), all objects inherit from the Object class.
+
+- Although Dart is strongly typed, type annotations are optional because Dart can infer types. In var number = 101, number is inferred to be of type int.
 
 ### var
 In Dart, var is a keyword that represents a dynamically typed variable. 
