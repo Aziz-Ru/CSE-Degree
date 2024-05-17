@@ -90,9 +90,37 @@
   isNoble(atomicNumber) {
   return _nobleGases[atomicNumber] != null;
   }
-  
-```
+  ```
 - Optional positional parameters
-
+  
+  ## Error handling
+    - Your Dart code can throw and catch exceptions. Exceptions are errors indicating that something unexpected happened.
+    - Throw
+      ```
+      throw FormatException('Expected at least 1 section');
+      ```
+   - Catch
+     ```
+     try {
+          breedMoreLlamas();
+        } catch(e){
+          print(e)
+        }```
+     
+    -Finally
+      - To ensure that some code runs whether or not an exception is thrown, use a finally clause.
+      -
+          ```
+          try {
+              breedMoreLlamas();
+            } catch (e) {
+              print('Error: $e'); // Handle the exception first.
+            } finally {
+              cleanLlamaStalls(); // Then clean up.
+            }
+          ```
+  ## Class
+  
+      
 
   
