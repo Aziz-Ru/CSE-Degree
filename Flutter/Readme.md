@@ -33,7 +33,7 @@
   - Future and Stream: Used in asynchrony support. (Like javascript promise)
   - dynamic: Indicates that you want to disable static checking. Usually you should use Object or Object?
   ## Record
-  - Records are an anonymous, immutable, aggregate type. Like other collection types, they let you bundle multiple objects into a single object.
+  - Records are an anonymous, immutable, aggregate type. Like other collection types, they let you bundle multiple objects into a single object.Record type annotations are comma-delimited lists of types enclosed in parentheses. 
   - syntax
     ```
     var record = ('first', a: 2, b: true, 'last');
@@ -42,4 +42,57 @@
       return (b, a);
     }
     ```
-    
+    ## Collections
+    Dart has built-in support for list, set, and map collections.
+    - ### Lists
+         - Perhaps the most common collection in nearly every programming language is the array, or ordered group of objects. 
+    - ### Sets
+        - A set in Dart is an unordered collection of unique items.
+        - ```
+          var names = <String>{};
+          elements.add('fluorine');
+          ```
+    - ### Maps
+        - In general, a map is an object that associates keys and values.
+        - ```
+          var gifts = Map<String, String>();
+            gifts['first'] = 'partridge';
+            gifts['second'] = 'turtledoves';
+            gifts['fifth'] = 'golden rings';
+            
+            var nobleGases = Map<int, String>();
+            nobleGases[2] = 'helium';
+            nobleGases[10] = 'neon';
+            nobleGases[18] = 'argon';
+        ```
+   - ### Spread operators
+     -Dart supports the spread operator (...) and the null-aware spread operator (...?) in list, map, and set literals. Spread operators provide a concise way to insert multiple values into a collection.
+     ```
+     var list = [1, 2, 3];
+     var list2 = [0, ...list];
+     assert(list2.length == 4);
+     ```
+  ## Generics
+  Generics are often required for type safety, but they have more benefits than just allowing your code to run:
+   - Properly specifying generic types results in better generated code.
+   - You can use generics to reduce code duplication.
+  ## What is soundness?
+    - Soundness is about ensuring your program can't get into certain invalid states. A sound type system means you can never get into a state where an expression evaluates to a value that doesn't match the expression's static type. For example, if an expression's static type is String, at runtime you are guaranteed to only get a string when you evaluate it.
+     ### The benefits of soundness
+  
+      - Revealing type-related bugs at compile time.
+      - More readable code.
+      - More maintainable code.
+      - Better ahead of time (AOT) compilation.
+## Function
+- A function can have any number of required positional parameters.
+  ```
+  isNoble(atomicNumber) {
+  return _nobleGases[atomicNumber] != null;
+  }
+  
+```
+- Optional positional parameters
+
+
+  
