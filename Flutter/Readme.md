@@ -120,6 +120,47 @@
             }
           ```
   ## Class
+  Dart is an object-oriented language with classes and mixin-based inheritance. Every object is an instance of a class, and all classes except Null descend from Object. Mixin-based inheritance means that although every class (except for the top class, Object?) has exactly one superclass, a class body can be reused in multiple class hierarchies.
+- ### Using class members
+Objects have members consisting of functions and data .
+- ### Using constructors
+  You can create an object using a constructor. Constructor names can be either ClassName or ClassName.identifier.
+  - Generative constructors: Creates new instances and initializes instance variables.
+    ```
+    class Point {
+      // Initializer list of variables and values
+      double x = 2.0;
+      double y = 2.0;
+      // Generative constructor with initializing formal parameters:
+      Point(this.x, this.y);
+    }
+    ```
+  - Default constructors: Used to create a new instance when a constructor hasn't been specified. It doesn't take arguments and isn't named.
+  - Named constructors: Clarifies the purpose of a constructor or allows the creation of multiple constructors for the same class.
+  - Constant constructors: Creates instances as compile-type constants.
+## Getters and setters
+Getters and setters are special methods that provide read and write access to an object's properties. 
+```
+class Rectangle {
+  double left, top, width, height;
+
+  Rectangle(this.left, this.top, this.width, this.height);
+
+  // Define two calculated properties: right and bottom.
+  double get right => left + width;
+  set right(double value) => left = value - width;
+  double get bottom => top + height;
+  set bottom(double value) => top = value - height;
+}
+
+void main() {
+  var rect = Rectangle(3, 4, 20, 15);
+  assert(rect.left == 3);
+  rect.right = 12;
+  assert(rect.left == -8);
+}
+```
+  
   
       
 
