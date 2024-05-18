@@ -37,6 +37,8 @@ var x = 2;
 # let
   The let declaration declares re-assignable, block-scoped local variables, optionally initializing each to a value.
   - let can not be redeclared.
+  - must be declared before use.
+  - is not hoisted(means to use variable must be declare)
 ```
  let x = 10;
 // Here x is 10
