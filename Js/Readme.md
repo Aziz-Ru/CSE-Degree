@@ -22,6 +22,9 @@ All JavaScript variables must be identified with unique names that is called ide
 - Names can also begin with $ and _ (but we will not use it in this tutorial).
 - Names are case sensitive (y and Y are different variables).
 - Reserved words (like JavaScript keywords) cannot be used as names.
+  
+# Hoisting
+You can use the variable before it is declared.It's only done by var
 # var
 Variables declared with the var always have Global Scope.
 - Variables defined with var can be redeclared.
@@ -38,7 +41,7 @@ var x = 2;
   The let declaration declares re-assignable, block-scoped local variables, optionally initializing each to a value.
   - let can not be redeclared.
   - must be declared before use.
-  - is not hoisted(means to use variable must be declare)
+  - is not hoisted(means before useing a variable you must be declare that varibale)
 ```
  let x = 10;
 // Here x is 10
@@ -48,3 +51,50 @@ let x = 2;
 }
 // Here x is 10 
 ```
+# const
+- Variables defined with const cannot be Redeclared
+- Variables defined with const cannot be Reassigned
+- Variables defined with const have Block Scope
+- JavaScript const variables must be assigned a value when they are declared
+- It does not define a constant value. It defines a constant reference to a value.
+-  Reassign a constant value
+-  Reassign a constant array
+-  Reassign a constant object
+-  Redeclaring an existing var or let variable to const, in the same scope, is not allowed
+  
+But You can
+-  Change the elements of constant array
+-  Change the properties of constant object
+  
+  ```
+const x = 10;
+// Here x is 10
+{
+const x = 2;
+// Here x is 2
+}
+// Here x is 10 
+```
+# JavaScript String Comparison
+Note that strings are compared alphabetically
+```
+const a='abc';
+const b='abd'
+a is lexically smaller than b
+```
+## Addition
+- string + string=string
+- string + number=string
+- number + string=string
+# Subtraction
+- string become a number 
+- string-number =number
+- number-string=number
+# Multification
+- string become a number 
+- string*number =number
+- number*string=number
+# Division
+- string become a number 
+- string/number =number
+- number/string=number
