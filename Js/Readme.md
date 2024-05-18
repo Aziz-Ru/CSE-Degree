@@ -98,3 +98,31 @@ a is lexically smaller than b
 - string become a number 
 - string/number =number
 - number/string=number
+# Datatypes
+- 1. String
+- 2. Number
+- 3. Bigint
+- 4. Boolean
+- 5. Undefined
+- 6. Null
+- 7. Symbol
+- 8. Object
+
+The Object Datatype.The object data type can contain:
+
+- 1. An object
+- 2. An array
+- 3. A date
+# Undefined and Null
+undefined means a variable has been declared but has not yet been assigned a value, whereas null is an assignment value, meaning that a variable has been declared and given the value of null .
+# Number
+Javascript numbers are always one type:
+double (64-bit floating point).
+
+# BigInt
+JavaScript BigInt is a new datatype (ES2020) that can be used to store integer values that are too big to be represented by a normal JavaScript Number.
+
+# function
+A JavaScript function is a block of code designed to perform a particular task.
+- Functions Used as Variable Values
+
