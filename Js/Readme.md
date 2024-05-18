@@ -10,7 +10,9 @@ Variables are Containers for Storing Data
 - Using var
 - Using let
 - Using const
-   The var keyword was used in all JavaScript code from 1995 to 2015.The let and const keywords were added to JavaScript in 2015.The var keyword should only be used in code written for older browsers.
+  
+The var keyword was used in all JavaScript code from 1995 to 2015.The let and const keywords were added to JavaScript in 2015.The var keyword should only be used in code written for older browsers.
+
   - Always use const if the type should not be changed
  
 # Identifier
@@ -26,14 +28,21 @@ Variables declared with the var always have Global Scope.
 ```
  var x = 10;
 // Here x is 10
-
 {
 var x = 2;
 // Here x is 2
 }
-
 // Here x is 2 
 ```
 # let
   The let declaration declares re-assignable, block-scoped local variables, optionally initializing each to a value.
   - let can not be redeclared.
+```
+ let x = 10;
+// Here x is 10
+{
+let x = 2;
+// Here x is 2
+}
+// Here x is 10 
+```
