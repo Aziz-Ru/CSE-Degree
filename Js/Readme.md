@@ -125,4 +125,10 @@ JavaScript BigInt is a new datatype (ES2020) that can be used to store integer v
 # function
 A JavaScript function is a block of code designed to perform a particular task.
 - Functions Used as Variable Values
+# Object
+- Objects are variables too. But objects can contain many values.
+- Objects can also have methods.
+- Methods are stored in properties as function definitions.
+- `this` refers to the "owner" of the function
+- It is a common practice to declare objects with the const keyword.
 
