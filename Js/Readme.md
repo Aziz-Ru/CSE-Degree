@@ -140,4 +140,36 @@ HTML events are "things" that happen to HTML elements.
 - onmouseout 	The user moves the mouse away from an HTML element.
 - onkeydown 	The user pushes a keyboard key.
 - onload The browser has finished loading the page.
+# String Methods
+- string.length (returns the length of a string)
+- 4 methods for extracting string characters
+        - The at(position) Method
+        - The charAt(position) Method
+        -  The charCodeAt(position) Method
+- string.slice(property) extracts a part of a string and returns the extracted part in a new string.
+- string.indexOf() method returns the index (position) of the first occurrence of a string in a string, or it returns -1 if the string is not found
+- string.lastIndexOf(only string) method returns the index of the last occurrence of a specified text in a string
+- string.search(regex/string/char) method searches a string for a string (or a regular expression) and returns the position of the match.search() method cannot take a second start position argument.
+- match() method returns an array containing the results of matching a string against a string (or a regular expression).
+- includes() method returns true if a string contains a specified value.Otherwise it returns false.includes() is case sensitive.includes() is an ES6 feature.
+- # Interpolation
+  -  Template String provide an easy way to interpolate variables and expressions into strings.`${...} `
+# Nan
+- NaN - Not a Number
+- NaN is a JavaScript reserved word indicating that a number is not a legal number.
+# Array
+- Arrays are Objects
+- Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.But, JavaScript arrays are best described as arrays.
+- The easiest way to add a new element to an array is using the push() method
+- pop() method removes the last element from an array
+- JavaScript does not support arrays with named indexes./fixed size array
+- JavaScript has a built-in array constructor new Array().But you can safely use [] instead.
+- concat() method creates a new array by merging (concatenating) existing arrays
+- sort() method sorts an array alphabetically
+- reverse() method reverses the elements in an array
+- # iteration
+    - forEach() method calls a function (a callback function) once for each array element.in callback function have 3 property .The item value,The item index,The array itself
+    - map() method creates a new array by performing a function on each array element.
+    - map returns a new array with the results of the function, while forEach does not return anything and only modifies the original array.
+
 
