@@ -172,5 +172,19 @@ HTML events are "things" that happen to HTML elements.
     - map() method creates a new array by performing a function on each array element.
     - map returns a new array with the results of the function, while forEach does not return anything and only modifies the original array.
     - Arrays are Not Constants.It does NOT define a constant array. It defines a constant reference to an array.
+# Date
+- Date objects are static.
+- Date objects are created with the new Date() constructor.
+- new Date() creates a date object with the current date and time.
+# Math
+- Math.round(x)	Returns x rounded to its nearest integer
+- Math.ceil(x)	Returns x rounded up to its nearest integer
+- Math.floor(x)	Returns x rounded down to its nearest integer
+- Math.trunc(x)	Returns the integer part of x (new in ES6)
+- Math.pow(x, y) returns the value of x to the power of y
+- Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments
+- Math.log2(x) returns the base 2 logarithm of x.
+- Math.log10(x) returns the base 10 logarithm of x.
+- Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive).`Math.floor(Math.random() * 100); `return a number between 0 to 99
 
 
