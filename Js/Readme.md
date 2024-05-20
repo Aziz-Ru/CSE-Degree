@@ -237,5 +237,6 @@ HTML events are "things" that happen to HTML elements.
 - JSON is language independent *
 - JSON is "self-describing" and easy to understand
 - JSON.parse() to convert the string into a JavaScript object
+- JSON.stringify() to convert the json to string
 
 
