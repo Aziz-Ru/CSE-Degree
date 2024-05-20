@@ -239,4 +239,10 @@ HTML events are "things" that happen to HTML elements.
 - JSON.parse() to convert the string into a JavaScript object
 - JSON.stringify() to convert the json to string
 
+  # JS Async
+  - A callback is a function passed as an argument to another function.This technique allows a function to call another function.A callback function can run after another function has finished
+  - A callback is a function passed as an argument to another function.
+  - Functions running in parallel with other functions are called asynchronous
+  - A Promise contains both the producing code and calls to the consuming code.Producing code" is code that can take some time."Consuming code" is code that must wait for the result,A Promise is an Object that links Producing code and Consuming code
+
 
