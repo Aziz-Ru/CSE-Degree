@@ -207,5 +207,29 @@ HTML events are "things" that happen to HTML elements.
 - \s 	Find a whitespace character 	
 - \b 	Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b 	
 - \uxxxx 	Find the Unicode character specified by the hexadecimal number xxxx
+# Errors
+- The try statement defines a code block to run (to try).
+
+- The catch statement defines a code block to handle any error.
+
+- The finally statement defines a code block to run regardless of the result.
+
+- The throw statement defines a custom error.
+# this keyword
+- In an object method, this refers to the objec
+- the this keyword refers to an object.
+- In a function, this refers to the global object.
+- In short, with arrow functions there are no binding of this.
+# Class
+- Use the keyword class to create a class.Always add a method named constructor().
+- The constructor method is a special method:
+
+    - It has to have the exact name "constructor"
+    - It is executed automatically when a new object is created
+    - It is used to initialize object properties
+# Module
+- Modules only work with the HTTP(s) protocol.
+- A web-page opened via the file:// protocol cannot use import / export.
+
 
 
