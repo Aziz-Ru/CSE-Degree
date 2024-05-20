@@ -171,5 +171,6 @@ HTML events are "things" that happen to HTML elements.
     - forEach() method calls a function (a callback function) once for each array element.in callback function have 3 property .The item value,The item index,The array itself
     - map() method creates a new array by performing a function on each array element.
     - map returns a new array with the results of the function, while forEach does not return anything and only modifies the original array.
+    - Arrays are Not Constants.It does NOT define a constant array. It defines a constant reference to an array.
 
 
