@@ -231,5 +231,11 @@ HTML events are "things" that happen to HTML elements.
 - Modules only work with the HTTP(s) protocol.
 - A web-page opened via the file:// protocol cannot use import / export.
 
+# JSON
+- JSON stands for JavaScript Object Notation
+- JSON is a lightweight data interchange format
+- JSON is language independent *
+- JSON is "self-describing" and easy to understand
+- JSON.parse() to convert the string into a JavaScript object
 
 
