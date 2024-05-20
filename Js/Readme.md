@@ -186,5 +186,26 @@ HTML events are "things" that happen to HTML elements.
 - Math.log2(x) returns the base 2 logarithm of x.
 - Math.log10(x) returns the base 10 logarithm of x.
 - Math.random() returns a random number between 0 (inclusive),  and 1 (exclusive).`Math.floor(Math.random() * 100); `return a number between 0 to 99
+# Comparison Operators
+- == 	equal to
+- != 	not equal
+- === 	equal value and equal type
+- !== 	not equal value or not equal type
+- ternary operator variablename = (condition) ? value1:value2
+- Nullish Coalescing Operator. The ?? operator returns the first argument if it is not nullish (null or undefined).
+
+# Regular Expression
+- A regular expression is a sequence of characters that forms a search pattern.
+- i 	Perform case-insensitive matching 	
+- g 	Perform a global match (find all) 	
+- m 	Perform multiline matching 	
+- d 	Perform start and end matching (New in ES2022)
+- [abc] 	Find any of the characters between the brackets 	
+- [0-9] 	Find any of the digits between the brackets 	
+- (x|y) 	Find any of the alternatives separated with |
+- \d 	Find a digit 	
+- \s 	Find a whitespace character 	
+- \b 	Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b 	
+- \uxxxx 	Find the Unicode character specified by the hexadecimal number xxxx
 
 
