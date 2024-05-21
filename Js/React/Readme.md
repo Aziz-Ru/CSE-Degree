@@ -10,3 +10,13 @@ React is a powerful JavaScript library for building dynamic and interactive user
   React follows one-way data binding, where data flows from parent components to child components.Child components cannot directly return data to their parent components, but they can communicate with parents to modify states based on provided inputs.
 - ### Components
   React divides web pages into reusable and immutable components.Component-based development simplifies code organization and maintenance.Each component can have its own state and props.there are two types of component first functional component and class component.
+## ReactJS Lifecycle
+- ### Initialization
+  This is the stage where the component is constructed with the given Props and default state. This is done in the constructor of a Component Class.
+- ### Mounting Phase
+    - Constructor: The constructor method initializes the component. It’s where you set up initial state and bind event handlers.
+    - render(): This method returns the JSX representation of the component. It’s called during initial rendering and subsequent updates.
+    - componentDidMount(): After the component is inserted into the DOM, this method is invoked. Use it for side effects like data fetching or setting timers.
+- ###  Updating Phase
+      -  componentDidUpdate(prevProps, prevState): Called after the component updates due to new props or state changes. Handle side effects here.
+
