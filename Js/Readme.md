@@ -244,5 +244,10 @@ HTML events are "things" that happen to HTML elements.
   - A callback is a function passed as an argument to another function.
   - Functions running in parallel with other functions are called asynchronous
   - A Promise contains both the producing code and calls to the consuming code.Producing code" is code that can take some time."Consuming code" is code that must wait for the result,A Promise is an Object that links Producing code and Consuming code
+  - Promise.then() takes two arguments, a callback for success and another for failure.
+  - async and await make promises easier to write
+  - async makes a function return a Promise
+  - await makes a function wait for a Promise
+  - The await keyword can only be used inside an async function.
 
 
