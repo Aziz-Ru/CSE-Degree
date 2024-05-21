@@ -264,3 +264,12 @@ HTML events are "things" that happen to HTML elements.
    - document.removeChild(element) 	Remove an HTML element
    - document.appendChild(element) 	Add an HTML element
    - document.replaceChild(new, old) 	Replace an HTML element
+  ## Constraint Validation HTML Input Attributes
+  - disabled 	Specifies that the input element should be disabled
+  - max 	Specifies the maximum value of an input element
+  - min 	Specifies the minimum value of an input element
+  - required 	Specifies that the input field requires an element
+  - type  	Specifies the type of an input element
+  ## Changing CSS
+  - `document.getElementById(id).style.property = new style`
+  - 
