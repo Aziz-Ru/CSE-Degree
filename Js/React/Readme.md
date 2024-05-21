@@ -18,5 +18,10 @@ React is a powerful JavaScript library for building dynamic and interactive user
     - render(): This method returns the JSX representation of the component. It’s called during initial rendering and subsequent updates.
     - componentDidMount(): After the component is inserted into the DOM, this method is invoked. Use it for side effects like data fetching or setting timers.
 - ###  Updating Phase
-      -  componentDidUpdate(prevProps, prevState): Called after the component updates due to new props or state changes. Handle side effects here.
+  - componentDidUpdate(prevProps, prevState): Called after the component updates due to new props or state changes. Handle side effects here
+  - shouldComponentUpdate(nextProps, nextState): Determines if the component should re-render. Optimize performance by customizing this method.
+  - render(): Again, the render() method reflects changes in state or props during updates.
+- ### Unmounting Phase
+  - componentWillUnmount(): Invoked just before the component is removed from the DOM. Clean up resources (e.g., event listeners, timers).
+ 
 
