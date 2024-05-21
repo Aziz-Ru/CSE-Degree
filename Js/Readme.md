@@ -238,8 +238,7 @@ HTML events are "things" that happen to HTML elements.
 - JSON is "self-describing" and easy to understand
 - JSON.parse() to convert the string into a JavaScript object
 - JSON.stringify() to convert the json to string
-
-  # JS Async
+# JS Async
   - A callback is a function passed as an argument to another function.This technique allows a function to call another function.A callback function can run after another function has finished
   - A callback is a function passed as an argument to another function.
   - Functions running in parallel with other functions are called asynchronous
@@ -249,5 +248,19 @@ HTML events are "things" that happen to HTML elements.
   - async makes a function return a Promise
   - await makes a function wait for a Promise
   - The await keyword can only be used inside an async function.
-
-
+# Document object model
+- HTML DOM methods are actions you can perform (on HTML Elements).
+- In the DOM, all HTML elements are defined as objects.
+  ## Finding HTML Elements
+  - document.getElementById(id) 	Find an element by element id
+  - document.getElementsByTagName(name) 	Find elements by tag name
+  - document.querySelectorAll("name") Find element by css selectors name. 
+  ## Changing HTML Elements
+    - element.innerHTML =  new html content 	Change the inner HTML of an element
+    - element.attribute = new value 	Change the attribute value of an HTML element
+    - element.style.property = new style 	Change the style of an HTML element
+  ## Adding and Deleting Elements
+   - document.createElement(element) 	Create an HTML element
+   - document.removeChild(element) 	Remove an HTML element
+   - document.appendChild(element) 	Add an HTML element
+   - document.replaceChild(new, old) 	Replace an HTML element
