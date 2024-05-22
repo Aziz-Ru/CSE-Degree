@@ -15,4 +15,12 @@ Virtual DOM exists which is like a lightweight copy of the actual DOM.Manipulati
   - We have seen that the re-rendering of the UI is the most expensive part and React manages to do this most efficiently by ensuring that the Real DOM receives batch updates to re-render the UI. This entire process of transforming changes to the real DOM is called Reconciliation.
  
 ## ReactDOM
-React-dom is the most widely used package of React. React provides the developers with a package react-dom to access and modify the DOM.
+ReactDOM is a package in React that provides DOM-specific methods that can be used at the top level of a web app to enable an efficient way of managing DOM elements of the web page.
+- ### Important functions provided by ReactDOM
+  - render(): This is one of the most important methods of ReactDOM. This function is used to render a single React Component or several Components wrapped together in a Component or a div element.
+  - findDOMNode(): This function is generally used to get the DOM node where a particular React component was rendered. This method is very less used like the following can be done by adding a ref attribute to each component itself.
+  - unmountComponentAtNode(): This function is used to unmount or remove the React Component that was rendered to a particular container.
+  - hydrate(): This method is equivalent to the render() method but is implemented while using server-side rendering. 
+  - createPortal(): It allow us to render a component into a DOM node that resides outside the current DOM hierarchy of the parent component.
+## List
+
