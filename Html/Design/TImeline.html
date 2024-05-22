@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Timeline.css" />
+    <title>Time Line</title>
+  </head>
+  <body>
+    <div class="timeline">
+      <div class="container arrow-icon">
+        <div class="content">
+          <h2>2017</h2>
+          <p>Lorem ipsum..</p>
+        </div>
+      </div>
+      <div class="container arrow-icon">
+        <div class="content">
+          <h2>2016</h2>
+          <p>Lorem ipsum..</p>
+        </div>
+      </div>
+    </div>
+    <div class="new-timeline">
+      <div class="container right">
+        <div class="content">
+          <h2>2016</h2>
+          <p>Lorem ipsum..</p>
+        </div>
+      </div>
+      <div class="container right arrow-icon">
+        <div class="content">
+          <h2>2016</h2>
+          <p class="demo" id="demo"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // const demo = document.getElementById("demo");
+      const txt = "I m Web Developer";
+      const speed = 100;
+      let i = 0;
+      let ok = true;
+      // document.getElementById("demo").innerHTML = txt;
+      function typeWriter() {
+        if (i < txt.length && ok) {
+          if (i == txt.length - 1) ok = false;
+          document.getElementById("demo").innerHTML += txt.charAt(i);
+          i++;
+          // setTimeout(typeWriter, 200);
+        } else if (i >= 0 && !ok) {
+          if (i == 0) ok = true;
+          const dltStr = document.getElementById("demo").innerHTML;
+          document.getElementById("demo").innerHTML = dltStr.substring(0, i);
+          i--;
+          // setTimeout(typeWriter, 200);
+        }
+      }
+      typeWriter();
+    </script>
+  </body>
+</html>
