@@ -23,4 +23,15 @@ ReactDOM is a package in React that provides DOM-specific methods that can be us
   - hydrate(): This method is equivalent to the render() method but is implemented while using server-side rendering. 
   - createPortal(): It allow us to render a component into a DOM node that resides outside the current DOM hierarchy of the parent component.
 ## List
+React Lists are mainly used for displaying menus on a website, for example, the navbar menu. In regular JavaScript, we can use arrays for creating lists. To traverse a list we will use the map() function. 
+- A “key” is a special string attribute you need to include when creating lists of elements in React.
+- Keys allow React to keep track of list elements.
+## ReactJS Refs
+ReactJS Refs are used to access and modify the DOM elements in the React Application. It creates a reference to the elements and uses it to modify them.
+
+## Conditional Rendering
+
+  - Using if else Statement
+ - Using Logical && Operator
+   - Using ternary operator
 
