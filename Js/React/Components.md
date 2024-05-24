@@ -13,4 +13,6 @@ A functional component is best suited for cases where the component doesn’t ne
 
 While class-based components can achieve the same result, they are generally less efficient compared to functional components. Therefore, it’s recommended to not use class components for general use.
 ## Props
-  Props(short for properties) are a way to pass data from the parent component to the child component.Props are like function arguments, you can use them as attributes in components.
+  Props(short for properties) are a way to pass data from the parent component to the child component.Props are like function arguments, you can use them as attributes in components.We know that everything in ReactJS is a component and to pass in data to these components, props are used. Whenever we call child components from parents we can pass data as props. This helps the parent component communicate with the child. 
+  - Passing methods as props
+## 
