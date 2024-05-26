@@ -10,6 +10,7 @@ An arrow function expression is a compact alternative to a traditional function 
 console.log(number())
  ``
 if use return then must use {} bracket
+
  ``
  let number=()=>  {
   return 10;
@@ -19,6 +20,8 @@ console.log(number())
 
  To Solve this problem:
  In ForEach funtion the callback function this is not parent this so that is error.To solve this problem Arror Function Comes.
+
+ 
  ``
  const js={
     name:'Language',
