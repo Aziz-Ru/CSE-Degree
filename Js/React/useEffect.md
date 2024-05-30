@@ -4,7 +4,7 @@
 *useEffect(setup, dependencies?)*
 
 
-Use Effect that works on side Effect.Every re-render useEffect function calls every time. You can control useEffect by dependencies which can change outside of useEffect hook. Call useEffect at the top level of your component to declare an Effect:
+Use Effect that works on side Effect.Every re-render useEffect function calls every time. You can control useEffect by dependencies which can change outside of useEffect hook.When you give blank array in dependenci that works only first time. Return a function when componont is going unmount. Call useEffect at the top level of your component to declare an Effect:
 ```
 import { useEffect } from 'react';
 import { createConnection } from './chat.js';
