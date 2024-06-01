@@ -87,5 +87,26 @@ Attributes modify the behavior of a field or block (e.g. models). There are two 
 
    - Field attributes are prefixed with @
    - Block attributes are prefixed with @@
+### @id
+Defines a single-field ID on the model.
+- Cannot be defined on a relation field
+- Cannot be optiona
+
+Relational databases
+
+
+Corresponding database type: PRIMARY KEY
+
+Can be annotated with a @default() value that uses functions to auto-generate an ID:
+
+   - autoincrement()
+   - cuid()
+   - uuid()
+
+## @relation
+Defines meta information about the relation.Corresponding database types: FOREIGN KEY / REFERENCES
+The name of the name argument on the @relation attribute can be omitted (references is required):
+
+` @relation(fields: [authorId], references: [id])`
 
 
