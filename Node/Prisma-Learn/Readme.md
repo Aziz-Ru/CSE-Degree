@@ -4,7 +4,7 @@
 
 - *Prisma Pulse* allows you to react to database changes with type-safe model subscriptions.
 - 
-##  Project setup
+# Prisma ORM Project setup
 ```
 npm init -y
 npm i prisma bcryptjs validator jsonwebtoken cookie-parser dotenv  --save-dev
@@ -98,51 +98,6 @@ main()
   })
 ```
 
-
-##  Prisma ORM
-
-Add Prisma ORM to your application in a few minutes to start modeling your data, run schema migrations and query your database.
-
-# Prisma Client
-Prisma Client is an auto-generated and type-safe query builder that's tailored to your data.
-Then, install the Prisma CLI as a development dependency in the project:
-
-`npm install prisma --save-dev`
-
-set up Prisma ORM with the init command of the Prisma CLI:
-
-`npx prisma init --datasource-provider databseName`
-
-### Importing Prisma Client
-
-Create a file _scripts.js_ that exports prisma client.
-
-```
-const { PrismaClient } = require('@prisma/client')
-
-const prisma = new PrismaClient()
-
-module exports=prisma;
-
-// use `prisma` in your application to read and write data in your DB
-```
-
-### Use Prisma Client to send queries to your database
-
-Once you have instantiated PrismaClient, you can start sending queries in your code:
-
-```_npx prisma init --datasource-provider _
-// run inside `async` function
-const newUser = await prisma.user.create({
-  data: {
-    name: 'Alice',
-    email: 'alice@prisma.io',
-  },
-})
-
-const users = await prisma.user.findMany()
-```
-
 ### Evolving your application
 
 Whenever you make changes to your database that are reflected in the Prisma schema, you need to manually re-generate Prisma Client to update the generated code in the node_modules/.prisma/client directory:
@@ -172,3 +127,12 @@ _Error: P1013: The provided database string is invalid. invalid port number in d
 - percent-encoding
   Replace special characters with percent-encodings
   Make sure that in your DATABASE_URL in the .env file, the special characters in your username and password are replaced with percent-encodings For example, in your database URL, if your username or password contains @ character, it should be replaced with its equivalent percent-encoding, that is %40. For # it is %23 and so on.
+
+
+# Prisma Accelerate
+Make your database queries faster by scaling your database connections and caching database results at the edge with Prisma Accelerate.
+
+# Prisma Pulse
+Prisma Pulse lets you subscribe to any changes in your database easily and in a type-safe way using Prisma Client, enabling you to trigger events and actions in real-time.
+
+
