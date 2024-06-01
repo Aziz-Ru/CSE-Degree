@@ -9,6 +9,12 @@
 npm init -y
 npm i prisma bcryptjs validator jsonwebtoken cookie-parser dotenv  --save-dev
 npx prisma init or npx prisma init --datasource-provider databaseName
+After this create Schema and migrate
+npx prisma migrate dev --name init
+generate prisma client
+npx prisma generate or npm install @prisma/client
+
+
 ```
 *npx prisma init* command does two things:
 
