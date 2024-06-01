@@ -41,5 +41,18 @@ Error object:
     name: 'TokenExpiredError'
     message: 'jwt expired'
     expiredAt: [ExpDate]
+- JsonWebTokenError
+  Error object:
+
+    name: 'JsonWebTokenError'
+    message:
+        'invalid token' - the header or payload could not be parsed
+        'jwt malformed' - the token does not have three components (delimited by a .)
+        'jwt signature is required'
+        'invalid signature'
+        'jwt audience invalid. expected: [OPTIONS AUDIENCE]'
+        'jwt issuer invalid. expected: [OPTIONS ISSUER]'
+        'jwt id invalid. expected: [OPTIONS JWT ID]'
+        'jwt subject invalid. expected: [OPTIONS SUBJECT]'
 
     
