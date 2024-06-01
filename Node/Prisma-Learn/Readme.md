@@ -1,17 +1,113 @@
 # Prisma
+- *Prisma ORM* is a next-generation Node.js and TypeScript ORM that unlocks a new level of developer experience when working with databases thanks to its intuitive data model, automated migrations, type-safety & auto-completion.
+- *Prisma Accelerate* is a global database cache with scalable connection pooling to make your queries fast.
 
-- To install Prism _npm i -D prisma_
+- *Prisma Pulse* allows you to react to database changes with type-safe model subscriptions.
+- 
+## Create project setup
+```
+npm init -y
+npm i prisma bcryptjs validator jsonwebtoken cookie-parser dotenv  --save-dev
+npx prisma init or npx prisma init --datasource-provider databaseName
+```
+*npx prisma init* command does two things:
+
+  - creates a new directory called prisma that contains a file called schema.prisma, which contains the Prisma schema with your database connection variable and schema models
+  - creates the .env file in the root directory of the project, which is used for defining environment variables (such as your database connection)
+
+- To install developing dependencis Prism _npm i -D prisma_
 - To initialize prisma _npx prisma init_. It create defualt datasource-provider postgresql database connection or you can run _npx prisma init --datasource-provider databaseName_
+### Connect your database
+_prisma/schema.prisma_
+```
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+```
+In.env file _DBURL="mysql://user:password@localhost:3306/dbNewName"_
 
-# Prisma Client
+- mysql://: This indicates that you're connecting to a MySQL database.
+- user:password: This is the username and password for the database user.
+- localhost: This is the hostname or IP address of the database server.
+- 3306: This is the port number where the MySQL server is listening (typically 3306).
+- /prismadb: This is the name of the database you want to connect to.
+- ?schema=public: This specifies that you want to use the public schema as the default schema.
 
-Prisma Client is an auto-generated and type-safe query builder that's tailored to your data.
+## Create Model
+Model your data in the Prisma schema
+```
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  posts Post[]
+}
 
-Install Prisma Client in your project with the following command:
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean @default(false)
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId  Int
+}
+```
+## Run a migration to create your database tables with Prisma Migrate
 
+you have a Prisma schema but no database yet. Run the following command in your terminal to create the SQLite database and the User and Post tables represented by your models:
+
+`npx prisma migrate dev --name init`
+
+This command did three things:
+
+  - It created a new SQL migration file for this migration in the prisma/migrations directory.
+  - It executed the SQL migration file against the database.
+  - It ran prisma generate under the hood (which installed the @prisma/client package and generated a tailored Prisma Client API based on your models).
+
+
+### Install and generate Prisma Client
 `npm install @prisma/client`
 
 This command also runs the `prisma generate `command, which generates Prisma Client into the node_modules/.prisma/client directory.
+
+### Querying the database
+
+Now that you have generated Prisma Client, you can start writing queries to read and write data in your database. For the purpose of this guide, you'll use a plain Node.js script to explore some basic features of Prisma Client.To use Prisma client  just export it from this file.
+```
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
+async function main() {
+  // ... you will write your Prisma Client queries here
+}
+
+main()
+  .then(async () => {
+    await prisma.$disconnect()
+  })
+  .catch(async (e) => {
+    console.error(e)
+    await prisma.$disconnect()
+    process.exit(1)
+  })
+```
+
+
+##  Prisma ORM
+
+Add Prisma ORM to your application in a few minutes to start modeling your data, run schema migrations and query your database.
+
+# Prisma Client
+Prisma Client is an auto-generated and type-safe query builder that's tailored to your data.
+Then, install the Prisma CLI as a development dependency in the project:
+
+`npm install prisma --save-dev`
+
+set up Prisma ORM with the init command of the Prisma CLI:
+
+`npx prisma init --datasource-provider databseName`
 
 ### Importing Prisma Client
 
@@ -60,34 +156,8 @@ Whenever you make changes to your database that are reflected in the Prisma sche
 - _npx prisma version_ Displays Prisma version info
 - _npx prisma debug_ Displays Prisma debug info
 
-### migrate model
 
-`$ prisma migrate dev --name init`
 
-- --name init: This specifies the name of the migration to be generated. In this case, it's init, which is the first migration that typically creates the database schema.
-
-### DB URL
-
-DATABASE_URL="mysql://user:password@localhost:3306/prismadb?schema=public"
-
-- mysql://: This indicates that you're connecting to a MySQL database.
-- user:password: This is the username and password for the database user.
-- localhost: This is the hostname or IP address of the database server.
-- 3306: This is the port number where the MySQL server is listening (typically 3306).
-- /prismadb: This is the name of the database you want to connect to.
-- ?schema=public: This specifies that you want to use the public schema as the default schema.
-
-## schema.prisma
-
-```
-datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
-}
-```
-
-- provider: Specifies the mysql data source connector, which is used both for MySQL and MariaDB.
-- url: Specifies the connection URL for the MySQL database server. In this case, an environment variable is used to provide the connection URL.
 
 # Trobolshooting
 
