@@ -4,7 +4,7 @@
 
 - *Prisma Pulse* allows you to react to database changes with type-safe model subscriptions.
 - 
-## Create project setup
+##  Project setup
 ```
 npm init -y
 npm i prisma bcryptjs validator jsonwebtoken cookie-parser dotenv  --save-dev
@@ -15,8 +15,6 @@ npx prisma init or npx prisma init --datasource-provider databaseName
   - creates a new directory called prisma that contains a file called schema.prisma, which contains the Prisma schema with your database connection variable and schema models
   - creates the .env file in the root directory of the project, which is used for defining environment variables (such as your database connection)
 
-- To install developing dependencis Prism _npm i -D prisma_
-- To initialize prisma _npx prisma init_. It create defualt datasource-provider postgresql database connection or you can run _npx prisma init --datasource-provider databaseName_
 ### Connect your database
 _prisma/schema.prisma_
 ```
