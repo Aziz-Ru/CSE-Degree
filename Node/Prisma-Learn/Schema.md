@@ -102,11 +102,29 @@ Can be annotated with a @default() value that uses functions to auto-generate an
    - autoincrement()
    - cuid()
    - uuid()
+## @default
+Defines a default value for a field .
+Corresponding database type: DEFAULT
 
+Default values can be a static value (4, "hello") or one of the following functions:
+
+- autoincrement()
+- sequence() (CockroachDB only)
+- dbgenerated()
+- cuid()
+- uuid()
+- now()
+- Default values are not allowed on relation fields in the Prisma schema. 
+
+## @unique
+Defines a unique constraint for this field.A field annotated with @unique can be optional or required.A field annotated with @unique must be required if it represents the only unique constraint on a model without an @id / @@id
+## @@index
+Defines an index in the database.
 ## @relation
 Defines meta information about the relation.Corresponding database types: FOREIGN KEY / REFERENCES
 The name of the name argument on the @relation attribute can be omitted (references is required):
 
 ` @relation(fields: [authorId], references: [id])`
-
+## @updatedAt
+Automatically stores the time when a record was last updated. If you do not supply a time yourself, Prisma Client will automatically set the value for fields with this attribute.
 
