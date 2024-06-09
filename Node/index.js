@@ -1,4 +1,5 @@
 const express = require("express");
+
 const AuthHandler = require("./Auth/AuthHandler");
 const postHandler = require("./Src/postsHandler");
 const dotenv = require("dotenv");

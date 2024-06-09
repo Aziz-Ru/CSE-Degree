@@ -17,6 +17,7 @@ model User{
   id String @id @default(uuid())
   name String @unique
   password String
+  role Role @default(Student)
   posts Post[]
 }
 model Post{
@@ -34,5 +35,26 @@ model Test{
   age Int
   city String
 
+}
+model Student{
+  id String @id @default(uuid())
+  name String
+  class ClassEnrollment[]
+}
+
+model ClassEnrollment{
+  id  String @id @default(uuid())
+  class Class[] 
+  student Student[]
+}
+model Class {
+  id String @id 
+  name String @unique
+  studnetsEnrolled ClassEnrollment[] 
+}
+enum Role{
+  Student
+  Teacher
+  Admin
 }
  
