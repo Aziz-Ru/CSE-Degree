@@ -23,10 +23,10 @@
         console.log("Connected to server");
       });
       sendBtn.addEventListener("click", () => {
-        socket.emit("send_message", "Hi server how are you");
+        socket.emit("get_message", "Hi server how are you");
       });
-      // get data from server
-      socket.on("data", (message) => {
+
+      socket.on("sent_message", (message) => {
         console.log(message);
       });
 
