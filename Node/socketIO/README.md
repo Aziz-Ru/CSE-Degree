@@ -44,6 +44,26 @@ socket.emit("hello", "world", (response) => {
   callback("got it");
 });
  ```
+### Broadcasting
+On the server-side, you can send an event to all connected clients or to a subset of clients:
+```
+// to all connected clients
+io.emit("hello");
+
+// to all connected clients in the "news" room
+io.to("news").emit("hello");
+
+```
+### Multiplexing
+```
+io.on("connection", (socket) => {
+  // classic users
+});
+
+io.of("/admin").on("connection", (socket) => {
+  // admin users
+});
+```
 
 
 
