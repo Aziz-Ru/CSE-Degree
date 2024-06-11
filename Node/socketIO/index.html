@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>WebSocket</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis facere
+      delectus fugiat dignissimos incidunt magnam, quia dolorum quae nihil quasi
+      sed! Nisi ratione, dolores eveniet quas blanditiis sunt quae odio?
+    </p>
+    <button id="btn">Send</button>
+
+    <script>
+      const sendBtn = document.getElementById("btn");
+
+      const socket = io();
+      socket.on("connect", () => {
+        console.log("Connected to server");
+      });
+      sendBtn.addEventListener("click", () => {
+        socket.emit("send_message", "Hi server how are you");
+      });
+      // get data from server
+      socket.on("data", (message) => {
+        console.log(message);
+      });
+
+      socket.on("disconnect", () => {
+        console.log("User disconnected from server ");
+      });
+    </script>
+  </body>
+</html>

@@ -24,7 +24,11 @@ router.get("/:id", AuthGurd, async (req, res) => {
     const post = await prisma.post.findFirst({
       where: { id: parseInt(id), author: { id: req.userId } },
     });
-    res.status(200).json({ data: post });
+    if (post) {
+      res.status(200).json({ data: post });
+    } else {
+      res.status(401).json({ Error: "Not Found" });
+    }
   } catch (error) {
     res.status(500).json({ Error: error.message });
   }
@@ -57,24 +61,55 @@ router.post("/create", AuthGurd, async (req, res) => {
 });
 
 //update post
-router.put("/:id", async (req, res) => {
+router.put("/:id", AuthGurd, async (req, res) => {
   const { id } = req.params;
   const { title, content } = req.body;
   try {
-    const updateData = {};
-    if (title) {
-      updateData.title = title;
-    }
-    if (content) {
-      updateData.content = content;
-    }
-    const post = await prisma.post.update({
-      where: {
-        id: parseInt(id),
-      },
-      data: updateData,
+    const findPost = await prisma.post.findFirst({
+      where: { id: parseInt(id), author: { id: req.userId } },
     });
-    res.status(200).json({ message: "Successfully Update" });
+    if (!findPost) {
+      res.status(400).json({ Error: "Not Found to Update" });
+      return;
+    } else {
+      const updateData = {};
+      if (title) {
+        updateData.title = title;
+      }
+      if (content) {
+        updateData.content = content;
+      }
+      const post = await prisma.post.update({
+        where: {
+          id: parseInt(id),
+        },
+        data: updateData,
+      });
+      res.status(200).json({ message: "Successfully Update" });
+    }
+  } catch (error) {
+    res.status(500).json({ Error: error.message });
+  }
+});
+//Delete Post
+router.delete("/:id", AuthGurd, async (req, res) => {
+  const { id } = req.params;
+  try {
+    const findPost = await prisma.post.findFirst({
+      where: { id: parseInt(id), author: { id: req.userId } },
+    });
+    if (!findPost) {
+      res.status(400).json({ Error: "Not Found to Delete" });
+      return;
+    } else {
+      const deletePost = await prisma.post.delete({
+        where: {
+          id: parseInt(id),
+          author: { id: req.userId },
+        },
+      });
+      res.status(200).json({ message: "Successfully Delete" });
+    }
   } catch (error) {
     res.status(500).json({ Error: error.message });
   }
