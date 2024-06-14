@@ -13,48 +13,115 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
-  id String @id @default(uuid())
-  name String @unique
-  password String
-  role Role @default(Student)
-  posts Post[]
-}
-model Post{
-  id Int @id @default(autoincrement())
-  title String
-  content String
-  published Boolean @default(false)
-  author User @relation(fields: [authorId],references: [id])
-  authorId String
+model School{
+  id            String @id @unique
+  name          String @unique
+  address       String  @db.LongText
+  email         String ?
+  createdAt     DateTime @default(now())
 }
 
-model Test{
-  id Int @id @default(autoincrement())
-  name String @unique
-  age Int
-  city String
-
+model Teacher{
+  id             String @id @default(uuid()) //Teacher ID
+  email          String
+  name           String // Teacher name
+  password       String // Teacher Password
+  imageLink      String ?
+  qualification  String ? //Teacher Qualification
+  rank           String
+  bio            String ? //Teacher Bio
+  dob            DateTime
+  sex            String //Teacher date of birth
+  address        String ? // Teacher Address
+  phone          String  @db.VarChar(11)
+  activeStatus   Boolean
+  salary         Float @default(20000.0)
+  attendence     TeacherAttendence[]
+  joindAt        DateTime @default(now())
 }
+
 model Student{
-  id String @id @default(uuid())
-  name String
-  class ClassEnrollment[]
+  id            String @id @default(uuid())
+  roll          String @unique
+  name          String
+  password      String
+  dob           DateTime 
+  sex           String
+  address       String ?
+  imageLink     String ?
+  phone         String @db.Char(11)
+  classroom     EnrolledClass @relation(fields: [classroomId],references: [id])
+  classroomId   String
+  result        Result[]
+  attendence    StudentAttendence[]
+  
 }
 
-model ClassEnrollment{
-  id  String @id @default(uuid())
-  class Class[] 
-  student Student[]
+// first create class
+model Classroom{
+  id            String @id @default(uuid())   
+  name          String @unique
+  course        Course[]
+  enrolled      EnrolledClass []
+  monthlyFee    Float @default(2000.0)
 }
-model Class {
-  id String @id 
-  name String @unique
-  studnetsEnrolled ClassEnrollment[] 
+model EnrolledClass{
+  id            String @id @default(uuid())
+  students      Student[]
+  classroom     Classroom @relation(fields: [className],references: [name])
+  className   String 
+  year          DateTime @db.Date 
 }
-enum Role{
-  Student
-  Teacher
-  Admin
+
+// create course and connect with class
+model Course{
+  id            String @id 
+  name          String 
+  credit        Int @default(3)
+  totalMarks    Int @default(100)
+  class         Classroom @relation(fields: [classroomId],references: [name])
+  classroomId   String
+  result         Result[]
 }
- 
+
+model StudentAttendence{
+  id            String @id @default(uuid())
+  student       Student @relation(fields: [studentId],references: [id])
+  studentId     String
+  status        Boolean  @default(false)
+  date          DateTime @default(now())
+}
+model TeacherAttendence{
+  id            String @id @default(uuid())
+  teacher       Teacher @relation(fields: [teacherId],references: [id])
+  teacherId     String
+  status        Boolean  @default(false)
+  date          DateTime @default(now())
+}
+
+model Exam{
+  id            String @id @default(uuid())
+  description   String @db.Text
+  name          String
+  date          DateTime
+  result        Result[]
+  
+}
+
+model Result{
+  id            String @id @default(uuid())
+  exam          Exam @relation(fields: [examId],references: [id])
+  examId        String
+  course        Course @relation(fields: [courseId],references: [id])
+  courseId      String
+  student       Student @relation(fields: [studentId],references: [id])
+  studentId     String
+  marks         Float @default(33.0)
+}
+
+model Issue{
+  id            String @id @default(uuid())
+  type          String
+  details       String @db.LongText
+}
+
