@@ -1,6 +1,6 @@
 const { PrismaClient } = require("@prisma/client");
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ errorFormat: "pretty" });
 // use `prisma` in your application to read and write data in your DB
 
 // async function main() {
