@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 
 const schoolHandler = require("./Routes/SchoolHandler");
 const classRoomHandler = require("./Routes/classroomHandler");
+const courseHandler = require("./Routes/courseHandler");
 const { errorHandler } = require("./middlewares/errorHandler");
 const app = express();
 
@@ -17,6 +18,7 @@ app.use("/post", postHandler);
 
 app.use("/school", schoolHandler);
 app.use("/class", classRoomHandler);
+app.use("/courses", courseHandler);
 
 app.use(errorHandler);
 
