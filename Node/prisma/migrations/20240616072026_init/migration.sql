@@ -38,7 +38,7 @@ CREATE TABLE `Student` (
     `roll` VARCHAR(191) NOT NULL,
     `name` VARCHAR(191) NOT NULL,
     `password` VARCHAR(191) NOT NULL,
-    `dob` DATETIME(3) NOT NULL,
+    `dob` DATE NOT NULL,
     `sex` VARCHAR(191) NOT NULL,
     `address` VARCHAR(191) NULL,
     `imageLink` VARCHAR(191) NULL,
@@ -126,6 +126,17 @@ CREATE TABLE `Issue` (
     `type` VARCHAR(191) NOT NULL,
     `details` LONGTEXT NOT NULL,
 
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Test` (
+    `id` VARCHAR(191) NOT NULL,
+    `name` VARCHAR(191) NOT NULL,
+    `date` DATE NULL,
+    `createdAt` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+
+    UNIQUE INDEX `Test_name_key`(`name`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

@@ -19,9 +19,10 @@ app.use("/post", postHandler);
 app.use("/school", schoolHandler);
 app.use("/class", classRoomHandler);
 app.use("/courses", courseHandler);
+app.use("/students", require("./Routes/studentHandler"));
 
 app.use(errorHandler);
 
 app.listen(8080, () => {
-  console.log("Server is running in port 5000");
+  console.log("Server is running in port 8080");
 });
