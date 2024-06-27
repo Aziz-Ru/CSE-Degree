@@ -1,7 +1,7 @@
 # Prisma
 
 - To install Prism _npm i -D prisma_
-- To initialize prisma _npx prisma init_. It create defualt datasource-provider postgresql database connection or you can run _npx prisma init --datasource-provider databaseName_
+- To initialize prisma _npx prisma init_. It create defualt datasource-provider postgresql database connection or you can run _npx prisma init --datasource-provider database_
 
 # Prisma Client
 

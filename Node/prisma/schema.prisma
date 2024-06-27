@@ -126,9 +126,19 @@ model Issue{
   details       String @db.LongText
 }
 
-model Test{
-  id String @id @default(uuid())
-  name String @unique
-  date DateTime ? @db.Date
-  createdAt  DateTime @default(now()) @db.Date
+
+model User{
+  id            String @id @default(uuid())
+  password      String
+  name          String @unique
+  createdAt     DateTime @default(now())
+  posts         Post[]
+}
+model Post{
+  id            String @id @default(uuid())
+  title         String
+  content       String @db.Text
+  author        User @relation(fields: [authorId],references: [id])
+  authorId      String
+  createdAt     DateTime @default(now())
 }
