@@ -1,46 +1,89 @@
 # Prisma
+- *Prisma ORM* is a next-generation Node.js and TypeScript ORM that unlocks a new level of developer experience when working with databases thanks to its intuitive data model, automated migrations, type-safety & auto-completion.
+- *Prisma Accelerate* is a global database cache with scalable connection pooling to make your queries fast.
 
-- To install Prism _npm i -D prisma_
-- To initialize prisma _npx prisma init_. It create defualt datasource-provider postgresql database connection or you can run _npx prisma init --datasource-provider database_
 
-# Prisma Client
+```
+*npx prisma init* command does two things:
 
-Prisma Client is an auto-generated and type-safe query builder that's tailored to your data.
+  - creates a new directory called prisma that contains a file called schema.prisma, which contains the Prisma schema with your database connection variable and schema models
+  - creates the .env file in the root directory of the project, which is used for defining environment variables (such as your database connection)
 
-Install Prisma Client in your project with the following command:
+### Connect your database
+_prisma/schema.prisma_
+```
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+```
+In.env file _DBURL="mysql://user:password@localhost:3306/dbNewName"_
 
+- mysql://: This indicates that you're connecting to a MySQL database.
+- user:password: This is the username and password for the database user.
+- localhost: This is the hostname or IP address of the database server.
+- 3306: This is the port number where the MySQL server is listening (typically 3306).
+- /prismadb: This is the name of the database you want to connect to.
+- ?schema=public: This specifies that you want to use the public schema as the default schema.
+
+## Create Model
+Model your data in the Prisma schema
+```
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  posts Post[]
+}
+
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean @default(false)
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId  Int
+}
+```
+## Run a migration to create your database tables with Prisma Migrate
+
+you have a Prisma schema but no database yet. Run the following command in your terminal to create the SQLite database and the User and Post tables represented by your models:
+
+`npx prisma migrate dev --name init`
+
+This command did three things:
+
+  - It created a new SQL migration file for this migration in the prisma/migrations directory.
+  - It executed the SQL migration file against the database.
+  - It ran prisma generate under the hood (which installed the @prisma/client package and generated a tailored Prisma Client API based on your models).
+
+
+### Install and generate Prisma Client
 `npm install @prisma/client`
 
 This command also runs the `prisma generate `command, which generates Prisma Client into the node_modules/.prisma/client directory.
 
-### Importing Prisma Client
+### Querying the database
 
-Create a file _scripts.js_ that exports prisma client.
-
+Now that you have generated Prisma Client, you can start writing queries to read and write data in your database. For the purpose of this guide, you'll use a plain Node.js script to explore some basic features of Prisma Client.To use Prisma client  just export it from this file.
 ```
-const { PrismaClient } = require('@prisma/client')
+import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-module exports=prisma;
+async function main() {
+  // ... you will write your Prisma Client queries here
+}
 
-// use `prisma` in your application to read and write data in your DB
-```
-
-### Use Prisma Client to send queries to your database
-
-Once you have instantiated PrismaClient, you can start sending queries in your code:
-
-```_npx prisma init --datasource-provider _
-// run inside `async` function
-const newUser = await prisma.user.create({
-  data: {
-    name: 'Alice',
-    email: 'alice@prisma.io',
-  },
-})
-
-const users = await prisma.user.findMany()
+main()
+  .then(async () => {
+    await prisma.$disconnect()
+  })
+  .catch(async (e) => {
+    console.error(e)
+    await prisma.$disconnect()
+    process.exit(1)
+  })
 ```
 
 ### Evolving your application
@@ -60,34 +103,8 @@ Whenever you make changes to your database that are reflected in the Prisma sche
 - _npx prisma version_ Displays Prisma version info
 - _npx prisma debug_ Displays Prisma debug info
 
-### migrate model
 
-`$ prisma migrate dev --name init`
 
-- --name init: This specifies the name of the migration to be generated. In this case, it's init, which is the first migration that typically creates the database schema.
-
-### DB URL
-
-DATABASE_URL="mysql://user:password@localhost:3306/prismadb?schema=public"
-
-- mysql://: This indicates that you're connecting to a MySQL database.
-- user:password: This is the username and password for the database user.
-- localhost: This is the hostname or IP address of the database server.
-- 3306: This is the port number where the MySQL server is listening (typically 3306).
-- /prismadb: This is the name of the database you want to connect to.
-- ?schema=public: This specifies that you want to use the public schema as the default schema.
-
-## schema.prisma
-
-```
-datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
-}
-```
-
-- provider: Specifies the mysql data source connector, which is used both for MySQL and MariaDB.
-- url: Specifies the connection URL for the MySQL database server. In this case, an environment variable is used to provide the connection URL.
 
 # Trobolshooting
 
@@ -98,3 +115,12 @@ _Error: P1013: The provided database string is invalid. invalid port number in d
 - percent-encoding
   Replace special characters with percent-encodings
   Make sure that in your DATABASE_URL in the .env file, the special characters in your username and password are replaced with percent-encodings For example, in your database URL, if your username or password contains @ character, it should be replaced with its equivalent percent-encoding, that is %40. For # it is %23 and so on.
+
+
+# Prisma Accelerate
+Make your database queries faster by scaling your database connections and caching database results at the edge with Prisma Accelerate.
+
+# Prisma Pulse
+Prisma Pulse lets you subscribe to any changes in your database easily and in a type-safe way using Prisma Client, enabling you to trigger events and actions in real-time.
+
+

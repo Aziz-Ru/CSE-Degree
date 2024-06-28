@@ -18,10 +18,12 @@ io.on("connection", (socket) => {
   console.log("User Connected");
 
   // server emits data
-  socket.emit("data", "Data is sent");
-  socket.on("send_message", (data) => {
+
+  socket.on("get_message", (data) => {
     console.log(data);
+    socket.emit("sent_message", `${data}.this sent from server`);
   });
+
   //here we disconnecte specifiq client
   socket.on("disconnect", () => {
     console.log("Disconnected from server");
