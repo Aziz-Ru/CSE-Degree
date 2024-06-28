@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/widget/buttonwidget.dart';
 import 'package:flutter_basic/widget/textfield.dart';
 import 'package:flutter_basic/widget/textwidget.dart';
 
@@ -44,13 +45,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(widget.title),
+          backgroundColor: Colors.blueGrey,
+          title: const Text('Currency Converter'),
+          centerTitle: true,
+          // actions: [const Icon(Icons.more_vert)],
         ),
         body: Container(
           color: Colors.blueGrey,
           child: const Column(
-            children: [TextWidget(), TextFieldWidget()],
+            children: [TextWidget(), TextFieldWidget(), ButtonWidget()],
           ),
         )); // This trailing comma makes auto-formatting nicer for build methods.
   }
