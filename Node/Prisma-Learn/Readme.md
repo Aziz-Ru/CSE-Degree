@@ -2,18 +2,6 @@
 - *Prisma ORM* is a next-generation Node.js and TypeScript ORM that unlocks a new level of developer experience when working with databases thanks to its intuitive data model, automated migrations, type-safety & auto-completion.
 - *Prisma Accelerate* is a global database cache with scalable connection pooling to make your queries fast.
 
-- *Prisma Pulse* allows you to react to database changes with type-safe model subscriptions.
-- 
-# Prisma ORM Project setup
-```
-npm init -y
-npm i prisma bcryptjs validator jsonwebtoken cookie-parser dotenv  --save-dev
-npx prisma init or npx prisma init --datasource-provider databaseName
-After this create Schema and migrate
-npx prisma migrate dev --name init
-generate prisma client
-npx prisma generate or npm install @prisma/client
-
 
 ```
 *npx prisma init* command does two things:

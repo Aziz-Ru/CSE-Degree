@@ -21,7 +21,7 @@ router
   })
   .post(courseChecker, async (req, res) => {
     try {
-      const { id, name, classRoom } = req.body;
+      const { roll, name, password } = req.body;
       const courseData = {
         id: id,
         name: name,
