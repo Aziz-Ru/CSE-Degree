@@ -8,7 +8,15 @@ class CurrencyConverter extends StatefulWidget {
 
 class _CurrencyConverter extends State<CurrencyConverter> {
   double _value = 0.0;
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
+
+  
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +36,7 @@ class _CurrencyConverter extends State<CurrencyConverter> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Text(
-                'BD: $_value Taka',
+                'BD: ${_value.toStringAsFixed(2)} Taka',
                 style:
                     const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
