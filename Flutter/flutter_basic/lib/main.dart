@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/widget/buttonwidget.dart';
-import 'package:flutter_basic/widget/textfield.dart';
-import 'package:flutter_basic/widget/textwidget.dart';
+import 'package:flutter_basic/weatherApp/app.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
+  await dotenv.load(fileName: '.env');
+
   runApp(const MyApp());
 }
 
@@ -14,47 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Weather App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: const ColorScheme.dark(),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: const WeatherApp(),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blueGrey,
-          title: const Text('Currency Converter'),
-          centerTitle: true,
-          // actions: [const Icon(Icons.more_vert)],
-        ),
-        body: Container(
-          color: Colors.blueGrey,
-          child: const Column(
-            children: [TextWidget(), TextFieldWidget(), ButtonWidget()],
-          ),
-        )); // This trailing comma makes auto-formatting nicer for build methods.
   }
 }
