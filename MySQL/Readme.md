@@ -170,4 +170,11 @@ You can use BETWEEN clause to replace a combination of "greater than equal AND l
 
 `SELECT * FROM stack WHERE id BETWEEN 2 and 5;`
 
-####
+BETWEEN uses >= and <=, not > and <.
+
+#### SELECT with WHERE
+`SELECT * FROM stack WHERE username = "admin" AND password = "admin";`
+
+## Backticks
+Backticks are mainly used to prevent an error called "MySQL reserved word". When making a table in PHPmyAdmin
+you are sometimes faced with a warning or alert that you are using a "MySQL reserved word"
