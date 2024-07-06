@@ -111,25 +111,63 @@ return value 0
 |BIGINT|8| -2^63|2^63 -1| 2^64 -1|
 
 
-####
+#### Fixed Point Types
+MySQL's DECIMAL and NUMERIC types store exact numeric data values. It is recommended to use these types to
+preserve exact precision, such as for money.
 
+- Decimal `salary DECIMAL(5,2)`
+5 represents the precision and 2 represents the scale. For this example, the range of values that can be stored in
+this column is -999.99 to 999.99  
 
+## Select
+SELECT is used to retrieve rows selected from one or more tables.
+The DISTINCT clause after SELECT eliminates duplicate rows from the result set.
 
-####
+```
+CREATE TABLE `car`
+(
+`car_id` INT UNSIGNED NOT NULL PRIMARY KEY,
+`name` VARCHAR(20),
+`price` DECIMAL(8,2)
+);
+INSERT INTO CAR (`car_id`, `name`, `price`) VALUES (1, 'Audi A1', '20000');
+INSERT INTO CAR (`car_id`, `name`, `price`) VALUES (2, 'Audi A1', '15000');
+INSERT INTO CAR (`car_id`, `name`, `price`) VALUES (3, 'Audi A2', '40000');
+INSERT INTO CAR (`car_id`, `name`, `price`) VALUES (4, 'Audi A2', '40000');
+SELECT DISTINCT `name`, `price` FROM CAR;
+```
+DISTINCT works across all columns to deliver the results, not individual columns. The latter is often a misconception
+of new SQL developers. In short, it is the distinctness at the row-level of the result set that matters, not distinctness
+at the column-level. To visualize this, look at "Audi A1" in the above result set.
 
+#### SELECT all columns (*)
+`SELECT * FROM stack;`
 
-####
+Best Practice Do not use * unless you are debugging or fetching the row(s) into associative arrays, otherwise
+schema changes (ADD/DROP/rearrange columns) can lead to nasty application errors. Also, if you give the list of
+columns you need in your result set, MySQL's query planner often can optimize the query
 
+#### SELECT by column name
+`SELECT id FROM stack;`
+ 
+#### SELECT with LIKE (%)
+- "adm" anywhere:
+ `SELECT * FROM stack WHERE username LIKE "%adm%";`
 
+- Begins with "adm":
+  `SELECT * FROM stack WHERE username LIKE "adm%";`
+- Ends with "adm":
+  `SELECT * FROM stack WHERE username LIKE "%adm";`
 
-####
+#### SELECT with a LIMIT clause
+`SELECT * FROM Customers ORDER BY CustomerID LIMIT 3;`
+- Always use ORDER BY when using LIMIT; otherwise the rows you will get will be unpredictable.
 
+#### SELECT with BETWEEN
+You can use BETWEEN clause to replace a combination of "greater than equal AND less than equal" conditions.
 
-####
+`SELECT * FROM stack WHERE id >= 2 and id <= 5;`
 
-
-
-####
-
+`SELECT * FROM stack WHERE id BETWEEN 2 and 5;`
 
 ####
