@@ -77,7 +77,59 @@ UTC to '2038-01-19 03:14:07' UTC.
 
 - The YEAR type represents a year and holds a range from 1901 to 2155.
 
+#### VARCHAR(255) -- or not
+The VARCHAR data type stores character strings of varying length that contain single-byte and (if the locale supports them) multibyte characters, where m is the maximum size (in bytes) of the column and r is the minimum number of bytes reserved for that column.The size of the maximum size (m) parameter of a VARCHAR column can range from 1 to 255 bytes. If you are placing an index on a VARCHAR column, the maximum size is 254 bytes. You can store character strings that are shorter, but not longer, than the m value that you specify.
+
+#### INT as AUTO_INCREMENT
+Any size of INT may be used for AUTO_INCREMENT. UNSIGNED is always appropriate.
+
+#### Implicit / automatic casting
+To make the multiplication with 2 MySQL automatically converts the string 123 into a number.
+
+`select '123' * 2;` 
+
+return value 246
+
+The conversion to a number starts from left to right. If the conversion is not possible the result is 0
+
+`select '123ABC' * 2`
+
+return value 246
+
+`select 'ABC123' * 2`
+
+return value 0
+
+#### Integer Types
+
+|Type|Storage(Bytes)|Minimum Value(Signed)|Maximum Value(Signed)|Maximum Value(Unsigned)|
+|------|------|-|-|-|
+|TINYINT|1| -2^7|2^7 -1| 2^8 -1|
+|SMALLINT|2| -2^15|2^15 -1| 2^16 -1|
+|MEDIUMINT|3| -2^23|2^23 -1| 2^24 -1|
+|INT|4| -2^31|2^31 -1| 2^32 -1|
+|BIGINT|8| -2^63|2^63 -1| 2^64 -1|
+
 
 ####
+
+
+
 ####
+
+
+####
+
+
+
+####
+
+
+####
+
+
+
+####
+
+
 ####
