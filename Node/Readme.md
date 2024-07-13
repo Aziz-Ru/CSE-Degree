@@ -181,6 +181,38 @@ Middleware functions are functions that have access to the request object (req),
 next middleware function in the application’s request-response cycle.Middleware functions can execute any code, make changes to res and req objects, end response cycle and call next
 middleware.
 
+### package.json
+A package.json ﬁle, usually present in the project root, contains metadata about your app or module as well as the
+list of dependencies to install from npm when running npm install.
+
+To initialize a package.json type npm init in your command prompt.
+`npm init --yes` or `npm init -y`
+
+To install a package and save it to package.json use:
+`npm install {package name} --save` or `npm i -S {package name}`
+
+
+### Event Emitters
+Event Emitters are built into Node, and are for pub-sub, a pattern where a publisher will emit events, which
+subscribers can listen and react to. n Node jargon, publishers are called Event Emitters, and they emit events, while
+subscribers are called listeners, and they react to the events.
+
+### Environment
+The process.env property returns an object containing the user environment.
+
+### Exception handling
+Node.js has 3 basic ways to handle exceptions/errors:
+1. try-catch block
+2. error as the ﬁrst argument to a callback
+3. emit an error event using eventEmitter
+
+try-catch is used to catch the exceptions thrown from the synchronous code execution. If the caller (or the caller's
+caller, ...) used try/catch, then they can catch the error. If none of the callers had try-catch than the program
+crashes.
+If using try-catch on an async operation and exception was thrown from callback of async method than it will not
+get caught by try-catch. To catch an exception from async operation callback, it is preferred to use promises.
+Example to understand it better
+
 ### npx
 
 node package excutor
