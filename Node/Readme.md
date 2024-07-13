@@ -213,6 +213,47 @@ If using try-catch on an async operation and exception was thrown from callback 
 get caught by try-catch. To catch an exception from async operation callback, it is preferred to use promises.
 Example to understand it better
 
+## async.js
+async.parallel(tasks, afterTasksCallback) will execute a set of tasks in parallel and wait the end of all tasks (reported
+by the call of callback function).
+When tasks are ﬁnished, async call the main callback with all errors and all results of tasks.
+
+```
+function shortTimeFunction(callback) {
+setTimeout(function() {
+callback(null, 'resultOfShortTime');
+}, 200);
+}
+function mediumTimeFunction(callback) {
+setTimeout(function() {
+callback(null, 'resultOfMediumTime');
+}, 500);
+}
+function longTimeFunction(callback) {
+setTimeout(function() {
+callback(null, 'resultOfLongTime');
+}, 1000);
+}
+async.parallel([
+shortTimeFunction,
+mediumTimeFunction,
+longTimeFunction
+],
+function(err, results) {
+if (err) {
+return console.error(err);
+}
+console.log(results);
+});
+Result : ["resultOfShortTime", "resultOfMediumTime", "resultOfLongTime"].
+```
+## File upload
+### Single File Upload using multer
+
+### Socket.io communication
+
+
+
 ### npx
 
 node package excutor
