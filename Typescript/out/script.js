@@ -7,7 +7,8 @@ let arr = [];
 arr.push("likie");
 let strNum = [];
 let obj = {};
-const myfun = () => {
+const myfun = (name, age = 10) => {
+    console.log(age);
     console.log("myFun");
 };
 console.log(myfun());
