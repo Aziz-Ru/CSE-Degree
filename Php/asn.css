@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.screen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid red;
+  height: 100vh;
+  width: 100%;
+}
+.formContainer {
+  margin-top: 20px;
+  width: 50%;
+  display: flex;
+  margin: 50px;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid; */
+}
+.inputDiv {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.inputDiv label {
+  font-size: 20px;
+}
+.inputDiv input {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+}
+.submit-btn {
+  font-size: 30px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(119, 215, 222);
+}
+.books {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+}
+.booktable {
+  border: 1px solid;
+}
+
+.bookrow {
+  border: 1px solid blueviolet;
+  padding: 10px;
+}
+.bookrow th,
+td {
+  padding: 10px;
+}
