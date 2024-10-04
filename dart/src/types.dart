@@ -2,7 +2,7 @@ import 'dart:math';
 
 void main() {
   // Variable
-  int? cnt;
+  // int? cnt;
   // The ? operator is used to declare a nullable variable.
   // A nullable variable can be assigned a null value.
   // If you try to access a nullable variable without checking for null, a runtime error occurs.
@@ -25,7 +25,7 @@ void main() {
   var isStudent = true;
   var isEmployed = false;
 
-  assert(cnt == null);
+  // assert(cnt == null);
   // Production code ignores the assert() call. During development, on the other hand, assert(condition) throws an exception if condition is false.
   print(lateStr);
   print(name.runtimeType);

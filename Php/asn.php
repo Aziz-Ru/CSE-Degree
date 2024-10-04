@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="./asn.css">
 </head>
 <body>
+    <?php 
+    function findBook($books,$title="",$author="",$isbn=""){
+        foreach($books as $book){
+            if($book['isbn']==$isbn){
+                return $book;
+            }
+        }
+        return null;
+    }
+    ?>
 <div class="screen">
     <div class="formContainer">
        
@@ -58,7 +68,11 @@
             $publisher=$_POST['publisher'];
             $bookData=file_get_contents("$curDir/books.json");
             $books=json_decode($bookData,true);
-            
+            $isExistIsbn=findBook($books,"","",$isbn);
+            if($isExistIsbn){
+                echo "<script>alert('Book with ISBN $isbn already exist')</script>";
+                return;
+            }
            $books[]=[
                 "title"=>$title,
                 "author"=>$author,
@@ -76,6 +90,7 @@
         
         ?>
         <table>
+            <thead>
             <tr class="bookrow">
                 <th>Title</th>
                 <th>Author</th>
@@ -85,7 +100,10 @@
                 <th>Publisher</th>
                 <th>Update</th>
             </tr>
+            </thead>
+            <tbody>
             <?php
+            
             foreach($books as $book){
                 echo "<tr class='bookrow'>";
                 echo "<td>".$book['title']."</td>";
@@ -97,7 +115,9 @@
                 echo "<td><a href='update.php?isbn=".$book['isbn']."'>Update</a></td>";
                 echo "</tr>";
             }
+            
             ?>
+            </tbody>
         </table>
             
 
