@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Harry porter",
+        "author": "JK Rowling",
+        "price": "1200",
+        "page": "600",
+        "isbn": "121",
+        "publisher": "Bloomsbury"
+    },
+    {
+        "title": "The Loard Of Rings",
+        "author": " George Orwell",
+        "price": "2000",
+        "page": "1200",
+        "isbn": "3442",
+        "publisher": "Bloomsbury"
+    },
+    {
+        "title": "The Loard Of Rings",
+        "author": " George Orwell",
+        "price": "2000",
+        "page": "1200",
+        "isbn": "3442",
+        "publisher": "Bloomsbury"
+    },
+    {
+        "title": "Hello",
+        "author": "Hello",
+        "price": "1200",
+        "page": "102",
+        "isbn": "21983912",
+        "publisher": "Secker & Warburg"
+    }
+]

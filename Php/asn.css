@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.screen {
+  flex-direction: row;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+.formContainer {
+  margin-top: 20px;
+  width: 30%;
+  margin: 50px;
+}
+.inputDiv {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.inputDiv label {
+  font-size: 20px;
+}
+.inputDiv input {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+}
+.submit-btn {
+  font-size: 30px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(119, 215, 222);
+}
+.bookrow {
+  padding: 10px;
+}

@@ -1,5 +1,7 @@
 ## Typescript
 
+[Tutorial](https://www.typescripttutorial.net/typescript-tutorial/what-is-typescript/)
+
 TypeScript is a superset of JavaScript.
 
 TypeScript builds on top of JavaScript. First, you write the TypeScript code. Then, you compile the TypeScript code into plain JavaScript code using a TypeScript compiler.
