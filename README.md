@@ -1,3 +1,5 @@
-# Try to Lean these Tools and language
+# Try to Lean these Tools
 
-## Trying to be a Backend Engineer
+- [Fundamental of Backend Engineering]('')
+
+- [Fundamental of Database Engineering]('')
