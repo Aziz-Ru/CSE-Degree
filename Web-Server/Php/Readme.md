@@ -356,5 +356,58 @@ and the list of parameters used in the invocation as an array, through the
 argument.
 property that the u
 
+## Namespaces
+
+A namespace in PHP is a way to encapsulate and organize code to prevent name conflicts between classes, functions, or constants that might have the same name but come from different libraries or modules.
+
+Avoid Name Conflicts: Prevents clashes when using multiple libraries or modules with similar class or function names.
+Improve Code Organization: Helps group related classes, functions, or constants logically.
+Enable Code Reusability: Makes it easier to work with libraries or frameworks.
+Shorter Class Names: You can use simpler names within namespaces, avoiding the need for verbose naming conventions.
+
+Fully Qualified Names: Specify the namespace explicitly.
+```
+$user = new \App\Models\User();
+```
+
+use Keyword: Import the namespace or specific class for shorter references.
+```
+require_once 'filename.php'
+use App\Models\User;
+
+$user = new User();
+
+```
+- Example
+```
+file1
+<?php
+
+namespace App\Models;
+
+class BookModel{
+    public function getName() : string{
+        return "This is a book model";
+        
+    }
+}
+
+?>
+
+file2
+
+<?php
+//use App\Models\BookModel;
+require_once "book.php";
+$bookmodel = new \App\Models\BookModel();
+//$bookmodel= new BookModel();
+echo $bookmodel->getName();
+
+?>
+```
+**The best solution is to use the keyword use. This keyword allows you to specify
+a full class name at the beginning of the file, and then use the simple name of the
+class in the rest of that file.**
+
 
 
