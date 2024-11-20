@@ -2,6 +2,14 @@
 
 Variables are "containers" for storing information.In PHP, a variable starts with the $ sign, followed by the name of the variable
 
+```
+<?php
+$a = 1;
+$b = 2;
+$c = $a + $b;
+echo $c; // 3
+```
+
 #### PHP is a Loosely Typed Language
 
 PHP automatically associates a data type to the variable, depending on its value. Since the data types are not set in a strict sense, you can do things like adding a string to an integer without causing an error.
@@ -284,3 +292,26 @@ The array_pop() function removes the last item of an array.
 - descending order, according to the value
 - krsort() - sort associative arrays in - -
 - descending order, according to the key
+
+##  Comparison operators
+
+```
+<?php
+var_dump(2 < 3); // true
+var_dump(3 < 3); // false
+var_dump(3 <= 3); // true
+var_dump(4 <= 3); // false
+var_dump(2 > 3); // false
+var_dump(3 >= 3); // true
+var_dump(3 > 3); // false
+var_dump(1 <=> 2); // int less than 0
+var_dump(1 <=> 1); // 0
+var_dump(3 <=> 2); // int greater than 0
+```
+
+## oop
+
+Objects are representations of real-life elements. Each object has a set of attributes
+that differentiates it from the rest of the objects of the same class, and is capable of a
+set of actions. A class is the definition of what an object looks like and what it can do,
+like a pattern for objects.
