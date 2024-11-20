@@ -309,9 +309,52 @@ var_dump(1 <=> 1); // 0
 var_dump(3 <=> 2); // int greater than 0
 ```
 
-## oop
+## OOP
 
 Objects are representations of real-life elements. Each object has a set of attributes
 that differentiates it from the rest of the objects of the same class, and is capable of a
 set of actions. A class is the definition of what an object looks like and what it can do,
 like a pattern for objects.
+
+## Magic methods
+
+There is a special group of methods that have a different behavior than the normal
+ones. Those methods are called magic methods, and they usually are triggered by
+the interaction of the class or object, and not by invocations.**hey begin with double underscores (__) and are automatically triggered in specific situations.**
+
+__toString: This method is invoked when we try to cast an object to a
+```
+<?php
+class Person {
+    private $name;
+    private $age;
+
+    public function __construct($name, $age) {
+        $this->name = $name;
+        $this->age = $age;
+    }
+
+    // __toString implementation
+    public function __toString() {
+        return "Name: $this->name, Age: $this->age";
+    }
+}
+
+$person = new Person("Alice", 25);
+echo $person; // Automatically calls __toString
+?>
+
+```
+
+__call: This is the method that PHP calls when you try to invoke a method
+
+__get: This is a version of __call for properties. It gets the name of the
+
+string. It takes no parameters, and it is expected to return a string.
+on a class that does not exist. It gets the name of the method as a string
+and the list of parameters used in the invocation as an array, through the
+argument.
+property that the u
+
+
+
