@@ -1,0 +1,4 @@
+# Dependency Injection
+
+  Dependency Injection (DI) is a design pattern used in software development to achieve Inversion of Control (IoC), where objects receive their dependencies from an external source rather than 
+  creating them themselves. 
