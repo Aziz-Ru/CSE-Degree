@@ -233,9 +233,7 @@ It mostly depends on the customer representative, if the customer representative
 
 ### RAD Model
 
-RAD model stands for rapid application development model. The methodology of RAD model is similar to that of incremental or waterfall model. It is used for small projects.
-
-If the project is large then it is divided into many small projects and these small projects are planned one by one and completed. In this way, by completing small projects, the large project gets ready quickly.
+The Rapid Application Development (RAD) model is an incremental and iterative software development process that emphasizes quick development and user feedback. It is designed to speed up the development process by using prototyping, iterative design, and collaboration to deliver a working software product in a shorter time frame. RAD focuses on reducing the time between development and deployment
 
 ### Spiral Model
 
