@@ -30,19 +30,18 @@ There 4 testing levels.
     - Type blacbox testing
     - Occure when modules are combined into large projects.
 - System Testing
-    - 
 - Acceptance Testing
 acceptance testing is formal testing with respect to user needs, requirements, and business
 processes. It determines whether a system satisfies the needs of the users, customers, and other stakeholders.Acceptance testing is usually done by the customer or the stakeholders during the maintenance stage of the SDLC.
 
 ## Verification & Validation
-Verification is the process of checking that software achieves its goal without any bugs.It is the process to ensure whether the product that is developed is right or not.some of the activities that are involved in verification.
+Verification is the process of checking that software achieves its goal without any bugs.It is the process to ensure whether the product that is developed is right or not**Verification is simply known as Static Testing.**.some of the activities that are involved in verification.
     Inspections
     Reviews
     Walkthroughs
     Desk-checking
 
-Validation is the process of checking whether the software product is up to the mark or in other words product has high-level requirements.som activities are 
+Validation is the process of checking whether the software product is up to the mark or in other words product has high-level requirements.**Verification is simply known as Dynamic Testing.**.som activities are 
     Black Box Testing
     White Box Testing
     Unit Testing
