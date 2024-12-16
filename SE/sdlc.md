@@ -236,3 +236,21 @@ It mostly depends on the customer representative, if the customer representative
 RAD model stands for rapid application development model. The methodology of RAD model is similar to that of incremental or waterfall model. It is used for small projects.
 
 If the project is large then it is divided into many small projects and these small projects are planned one by one and completed. In this way, by completing small projects, the large project gets ready quickly.
+
+### Spiral Model
+
+The diagrammatic representation of the Spiral model appears like a spiral with many loops.
+ The exact number of loops of the spiral is unknown and can vary from project to project. Each loop of the spiral is called a phase of the software development process. **Each phase of the Spiral Model is divided into four quadrants**
+
+ 1. Objectives determination and identify alternative solutions:
+    Requirements are gathered from the customers and the objectives are identified, elaborated, and analyzed at the start of every phase. Then alternative solutions possible for the phase are proposed in this quadrant.
+
+ 2. Identify and resolve Risks: During the second quadrant, all the possible solutions are evaluated to select the best possible solution.
+  
+ 3. Develop the next version of the Product: During the third quadrant, the identified features are developed and verified through testing.
+ 4. Review and plan for the next Phase: In the fourth quadrant, the Customers evaluate the so-far developed version of the software.
+
+Risk Handling: The projects with many unknown risks that occur as the development proceeds, in that case, Spiral Model is the best development model to follow due to the risk analysis and risk handling at every phase.
+Good for large projects: It is recommended to use the Spiral Model in large and complex projects.
+Flexibility in Requirements: Change requests in the Requirements at a later phase can be incorporated accurately by using this model.
+Customer Satisfaction: Customers can see the development of the product at the early phase of the software development and thus, they habituated with the system by using it before completion of the total product.
