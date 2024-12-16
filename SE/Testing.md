@@ -6,7 +6,14 @@ Software testing involves executing a program to identify any error or bug in th
 Software Testing is the practice of integrating quality checks throughout the software development to meet the specifiq requirement.
 
 The main goal of software testing is to ensure that the system and its components meet the specified requirements and work accurately in every case.It must be remembered that testing does expose many defects existing in a software product
-
+## Software Testing Principles 
+- Testing shows the presence of defects
+- Exhaustive Testing is not possible
+- Early Testing
+- Defect Clustering
+- Pesticide Paradox
+- Testing is context-dependent
+- Absence of errors fallacy
 The purpose of testing is to
 - check whether the software matches expected requirements and
 - ensure error-free software.
@@ -106,7 +113,7 @@ White Box Testing is a way of testing the software in which the tester has knowl
 
 #### Control flow testing
 
-Control flow testing is a structural testing strategy. This testing technique comes under white box testing. 
+Control flow testing is a structural testing strategy. Control flow testing is a testing technique to determine the execution order of statements or instructions of the program through a control structure.It is mostly used in unit testing.
 
 ####  Statement Coverage
 
