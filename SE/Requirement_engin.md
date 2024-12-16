@@ -17,16 +17,21 @@ Feasiblity Study -> Requirements Elicitation -> Requirements Specification -> Ve
 
 **Requirements specification** is the process of documenting the requirements identified in the analysis step in a clear, consistent, and unambiguous manner. 
 
-Functional Requirements: These describe what the software system should do. They specify the functionality that the system must provide, such as input validation, data storage, and user interface.
-
-Non-Functional Requirements: These describe how well the software system should do it. They specify the quality attributes of the system, such as performance, reliability, usability, and security.
-
 **Requirements verification and validation** (V&V) is the process of checking that the requirements for a software system are complete, consistent, and accurate and that they meet the needs and expectations of the stakeholders.
 
 Verification is checking that the requirements are complete, consistent, and accurate.
 Validation is the process of checking that the requirements meet the needs and expectations of the stakeholders.
 
 **Requirement management** is the process of analyzing, documenting, tracking, prioritizing, and agreeing on the requirement and controlling the communication with relevant stakeholders.
+
+|Functional Requirements|Non Functional Requirements|
+|--|---|
+|These describe what the software system should do.|These describe how well the software system should do it.|
+|Focuses on the behavior and features of the system. |Focuses on the performance, usability, and other quality attributes.|
+|They specify the functionality that the system must provide, such as input validation, data storage, and user interface.|They specify the quality attributes of the system, such as performance, reliability, usability, and security.|
+|Directly affects the business logic.|Influences user satisfaction and system efficiency.|
+
+
 
 ### Advantages
 
