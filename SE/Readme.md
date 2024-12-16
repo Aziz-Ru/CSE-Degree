@@ -18,8 +18,16 @@ deemed narrower in scope than that of a software engineer.A software engineer’
 
 **I think really has to do with, I consider it a creative process.And it's fundamentally is the practice of designing, envisioning implementing, and then supporting and maintaining software through the full lifecycle of it. So not just writing code, but, you know, thinking about the software you're building before you even written a line of code, the  journey from idea inception to, to actual implementation and launching upset software and then maintaining it, improving it, supporting it, and potentially evolving into something else. So it's very much a sort of creative and full, full lifecycle end to end engineering process.**
 
-#### Responsibilities
-Responsibilities include writing and testing code, and consulting with stakeholders such as clients, third party software vendors, security specialists, and other team members.The adoption of a measured, scientific approach to software development has influenced the way software is created and designed.
+#### Aim of Software Engineering
+The principal aim of software engineering is to develop high-quality software that is:
+
+- Reliable: Performs the intended functions correctly and consistently.
+- Efficient: Optimized for performance and resource usage.
+- Maintainable: Easy to modify, extend, and debug.
+- Scalable: Can handle growing demands without significant redesign.
+- Cost-Effective: Developed and maintained within reasonable budgets.
+- Delivered on Time: Meets deadlines without sacrificing quality.
+- Satisfying User Requirements: Aligns with the needs and expectations of users and stakeholders.
 
 #### Why is Software Engineering required
 - To manage Large software
