@@ -135,6 +135,13 @@ In branch coverage, all conditions must be executed at least once. On the other 
 
 - gives higher confidence, and trust on the code developed for the software
 
+### Modified Condition/ Decision Coverage
+Test important combination of condition and limited cost.extended branch and decision coverage with requirement that each condition should afffect that decision independently.
+
+### Cyclomatic Complexity
+The cyclomatic complexity of a code section is the quantitative measure of the number of linearly independent paths in it. It is a software metric used to indicate the complexity of a program.
+McCabe’s cyclomatic complexity metric is an important result that helps us to compute
+the number of linearly independent paths for any arbitrary program
 
 #### Gray Box Testing
 
