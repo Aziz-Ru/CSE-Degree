@@ -43,18 +43,21 @@ It is unplanned and random cohesion, which might be the result of breaking the p
 
 ### Logical cohesion
 
-When logically categorized elements are put together into a module, it is called logical cohesion.
+When logically categorized elements are put together into a module, it is called logical cohesion.The elements are logically related and not functionally.The elements are not related(unrelated). The elements have no conceptual relationship other than location in source code. 
 
 ### Temporal Cohesion
 When elements of module are organized such that they are processed at a similar point in time, it is called temporal cohesion.
+The elements are related by their timing involved. 
 
 ### Procedural cohesion
 
 When elements of module are grouped together, which are executed sequentially in order to perform a task, it is called procedural cohesion.
+Elements of procedural cohesion ensure the order of execution.
 
 ### Communicational cohesion
 
 When elements of module are grouped together, which are executed sequentially and work on same data (information), it is called communicational cohesion.
+Two elements operate on the same input data or contribute towards the same output data.
 
 ### Sequential cohesion 
 When elements of module are grouped because the output of one element serves as input to another and so on, it is called sequential cohesion.
