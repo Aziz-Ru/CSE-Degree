@@ -1,9 +1,22 @@
 # SDLC
 
-### Software Development Life Cycle(SDLC)
+## Software Development Life Cycle(SDLC)
 
-The software development life cycle (SDLC) is a structured process that is used to design, develop, and test good-quality software. SDLC is a methodology that defines the entire procedure of software development step-by-step. The goal of the SDLC life cycle model is to deliver high quality, maintainable software that meets the user’s requirements. The Software Development Life Cycle, known as the SDLC,is a systematic process to develop high-quality software in a predictable timeframe and budget.The goal of the SDLC is to produce software that meets a client’s business requirements.
+A software development life cycle (SDLC) model (also called software life cycle model and
+software development process model) describes the diﬀerent activities that need to be carried
+out for the software to evolve in its life cycle.The software development life cycle (SDLC) is a structured process that is used to design, develop, and test good-quality software. SDLC is a methodology that defines the entire procedure of software development step-by-step. The goal of the SDLC life cycle model is to deliver high quality, maintainable software that meets the user’s requirements. The Software Development Life Cycle, known as the SDLC,is a systematic process to develop high-quality software in a predictable timeframe and budget.The goal of the SDLC is to produce software that meets a client’s business requirements.
 
+### Process versus methodology
+
+A software development process has a much broader scope as compared to a software development  methodology. A process usually describes all the activities starting from the inception of a software to its maintenance and retirement stages, or at least a chunk of activities in the  life cycle. It also recommends speciﬁc methodologies for carrying out each activity. A methodology, in contrast, describes the steps to carry out only a single or at best a few individual activities.
+
+- Systematic and Organized Approach
+- Improved Project Management
+- Risk Management
+- Requirement Clarity
+- Quality Assurance
+- Cost and Time Efficiency
+  
 #### Advantage
 
 - increased efficiency and reduce risks
@@ -13,8 +26,17 @@ The software development life cycle (SDLC) is a structured process that is used 
 - facilitates communication between the customer, other stakeholders, and the development team.
 
 **Phases of the SDLC**
-There are 6 ohase in sdlc. Each phase is discreate meaning that task from a previous phase do not overlap with task in next phase. 
+There are 6 phase in SDLC. Each phase is discreate meaning that task from a previous phase do not overlap with task in next phase. 
 
+- **Requirement Analysis**:To gather and analyze the needs of the stakeholders and document the software requirements.
+- **Design**:To create a blueprint or architecture of the software system based on the gathered requirements.
+- **Implementation/Coding**:To convert the design into executable code using programming languages and tools.
+- **Testing**:To identify and fix defects, ensuring the software works as intended.
+Activities:
+- **Deployment**:To make the software available for use in the production environment.
+- **Maintenance**:To ensure the software continues to function correctly and efficiently after deployment.
+
+  
 1. Planning & Requirements Gathering
 
 - Requirements Gathered
@@ -95,6 +117,8 @@ Software modeling is the process of creating abstract representations of a softw
 ### Waterfall Model
 
 The Waterfall model is a linear and sequential model which means that a development phase cannot begin unti the previous is completed.
+
+
 
 **Advantages**
 
