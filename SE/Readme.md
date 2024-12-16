@@ -126,5 +126,19 @@ The principal aim of software engineering is to develop high-quality software th
      -   Code reviews.
      -   Performance and security testing.
 
+## Basic Techniques
+- Abstraction
 
+    Definition: Simplifying complex systems by focusing on the essential features while ignoring implementation details.
+    Purpose: Helps reduce the cognitive load by breaking down the problem into more understandable components.
+
+- Modularity
+
+    Definition: Dividing the system into smaller, self-contained modules or components that can be developed, tested, and maintained independently.
+    Purpose: Makes the system easier to understand, debug, and scale.
+  
+- Decomposition
+
+    Definition: Breaking down a complex problem into smaller, more manageable sub-problems or tasks.
+    Purpose: Simplifies problem-solving and allows for parallel development.
 
