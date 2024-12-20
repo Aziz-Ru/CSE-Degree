@@ -71,4 +71,12 @@ There are two types of participation constraints-
   
   Specialization is a reverse process of generalization where a super class is divided into sub classes by assigning the specific characteristics of sub classes to them.
 
-    
+## Cardinality
+Cardinality constraint defines the maximum number of relationship instances in which an entity can participate.
+- Many-to-Many cardinality (m:n)
+- Many-to-One cardinality (m:1)
+- One-to-Many cardinality (1:n)
+- One-to-One cardinality (1:1 )
+
+    If minimum cardinality = 0, then it signifies partial participation.
+    If minimum cardinality = 1, then it signifies total participation.
