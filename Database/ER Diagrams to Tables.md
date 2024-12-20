@@ -58,5 +58,28 @@ three tables will be required-
     R ( a1 , b1 )
     B ( b1 , b2 )
 
+## Problems
+
+<img src="https://www.gatevidyalay.com/wp-content/uploads/2018/06/ER-Diagrams-to-Tables-Problem-05.png?ezimgfmt=ng:webp/ngcb1"/>
+
+Applying the rules that we have learnt, minimum 6 tables will be required-
+
+    Account (Ac_no , Balance , b_name)
+    Branch (b_name , b_city , Assets)
+    Loan (L_no , Amt , b_name)
+    Borrower (C_name , L_no)
+    Customer (C_name , C_street , C_city)
+    Depositor (C_name , Ac_no)
 
 
+Find the minimum number of tables required to represent the given ER diagram in relational model-
+
+<imd src="https://www.gatevidyalay.com/wp-content/uploads/2018/06/ER-Diagrams-to-Tables-Problem-03.png?ezimgfmt=ng:webp/ngcb1"/>
+
+Applying the rules, minimum 5 tables will be required-
+
+    BR1R4R5 (b1 , b2 , a1 , c1 , d1)
+    A (a1 , a2)
+    R2 (a1 , c1)
+    CR3 (c1 , c2 , d1)
+    D (d1 , d2)
