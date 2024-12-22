@@ -1,5 +1,10 @@
 # Docker
 
+A container image is a standardized package that includes all of the files, binaries, libraries, and configurations to run a container.
+
+1. Images are immutable. Once an image is created, it can't be modified. You can only make a new image or add changes on top of it.
+2.  Container images are composed of layers. Each layer represents a set of file system changes that add, remove, or modify files.
+
 ### Docker all Contaiers
 
 ```
@@ -93,6 +98,16 @@ docker ps
 docker diff container
 ```
 ## Manage Images Commands
+### Search for and download an image
+```
+docker search docker/welcome-to-docker
+```
+### Pull the image using the docker pull command.
+```
+docker pull docker/welcome-to-docker
+```
+
+
 ### Lists images
 ```
 docker image ls
