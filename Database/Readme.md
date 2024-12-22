@@ -68,6 +68,8 @@ of the database.
 
 The overall design of the database is called the database schema.
 
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20231031152106/Data-Abstraction-and-Data-Independence.webp"/>
+
 ## ER Model
 The Entity Relationship Model is a model for identifying entities to be represented in the database and representation of how those entities are related.
 
