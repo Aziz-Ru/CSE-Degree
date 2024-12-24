@@ -214,3 +214,119 @@ where each module runs in a private scope, so that every variable that is define
 locally does not pollute the global namespace.
 
 ## homemade module loader
+
+## The observer pattern
+
+The Observer Pattern is a design pattern in software development where an object (called the subject) maintains a list of dependent objects (observers) and notifies them automatically of any changes to its state. It is commonly used to implement event-driven systems or publish-subscribe mechanisms.
+
+In Node.js, the Observer Pattern is frequently used for handling events, and it is natively supported through the EventEmitter class in the events module.
+
+## EventEmitter
+
+The EventEmitter class in Node.js is a core module that provides a way to handle asynchronous events. It objects to emit events and other objects to listen and respond to those events.
+
+In traditional object-oriented programming, the observer pattern requires interfaces, concrete classes, and a hierarchy; in Node.js, all becomes much simpler.
+
+The observer pattern is already built into the core and is available through the EventEmitter class.
+
+The essential methods of the EventEmitter are given as follows:
+
+- on(event, listener): This method allows you to register a new listener
+
+- once(event, listener): This method registers a new listener, which is
+  then removed after the event is emitted for the first time
+- emit(event, [arg1], […]): This method produces a new event and provides additional arguments to be passed to the listeners
+
+- removeListener(event, listener): This method removes a listener for
+  (a function) for the given event type (a string)
+
+### Listening events
+
+Before emits any event, it must register functions(callbacks) to listen to the events.
+
+```
+eventEmitter.addListener(event, listener)
+eventEmitter.on(event, listener)
+```
+
+### Emitting events
+
+Every event is named event in nodejs. We can trigger an event by emit(event, [arg1], [arg2], […]) function. We can pass an arbitrary set of arguments to the listener functions.
+
+### Promise
+
+A Promise in JavaScript is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+Think of a Promise as a placeholder for a value that will be available in the future. It can be in one of three states:
+
+- Pending: The task is in initial state.
+
+- Fulfilled: The task completed successfully, and the result is available.
+
+- Rejected: The task failed, and an error is provided.
+
+```
+et promise = new Promise((resolve, reject) => {
+    // Perform async operation
+    if (operationSuccessful) {
+        resolve(“Task successful”);
+    } else {
+        reject(“Task failed”);
+    }
+});
+```
+
+resolve(value): Marks the promise as fulfilled and provides a result.
+reject(error): Marks the promise as rejected with an error.
+
+```
+promise is pending when
+the asynchronous operation is not yet complete, it's fulfilled when the operation
+successfully completes, and rejected when the operation terminates with an error.
+```
+
+The Promise.all() method is one of the promise concurrency methods. It can be useful for aggregating the results of multiple promises.
+
+## Buffer
+
+A buffer is a storage in physical memory used to temporarily store data while it is being transferred from one place to another.
+
+Buffer objects are used to represent a fixed-length sequence of bytes.
+
+A Buffer in Node.js is a temporary memory container that stores binary data.It is specifically designed to handle raw binary data, such as file contents, image data, or network packets.A buffer represents a fixed amount of memory that is loaded into RAM.
+
+```
+const { Buffer } = require('node:buffer');
+
+const buf = Buffer.from('hello world', 'utf8');
+
+console.log(buf.toString('hex'));
+// Prints: 68656c6c6f20776f726c64
+console.log(buf.toString('base64'));
+// Prints: aGVsbG8gd29ybGQ=
+
+console.log(Buffer.from('fhqwhgads', 'utf8'));
+// Prints: <Buffer 66 68 71 77 68 67 61 64 73>
+console.log(Buffer.from('fhqwhgads', 'utf16le'));
+// Prints: <Buffer 66 00 68 00 71 00 77 00 68 00 67 00 61 00 64 00 73 00>
+```
+
+## Coding with Streams
+
+A Stream in Node.js is a sequence of data chunks that are read or written incrementally.
+
+event-based platform such as Node.js, the most efficient way to handle I/O is
+in real time, consuming the input as soon as it is available and sending the output as
+soon as it is produced by the application.
+
+Each stream class is also an instance of EventEmitter
+
+There are four fundamental stream types within Node.js:
+
+- Writable: streams to which data can be written (for example, fs.createWriteStream()).
+
+- Readable: streams from which data can be read (for example, fs.createReadStream()).
+
+- Duplex: streams that are both Readable and Writable (for example, net.Socket).
+
+- Transform: Duplex streams that can modify or transform the data as it is written and read (for example, zlib.createDeflate()).
