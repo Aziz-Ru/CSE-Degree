@@ -1,6 +1,5 @@
 ## OOP
 
-
 Objects are representations of real-life elements. Each object has a set of attributes
 that differentiates it from the rest of the objects of the same class, and is capable of a
 set of actions. A class is the definition of what an object looks like and what it can do,
@@ -9,7 +8,7 @@ like a pattern for objects.
 ### Public, Protected,Private
 
 - #### Public
-  
+
   The member is accessible from anywhere, both inside and outside the class.For members that need to be universally accessible.
 
 - #### Private
@@ -27,7 +26,7 @@ static keyword is used to define members (variables or methods) that belong to t
 
 ## Encapsulation
 
- It is the concept of bundling the data (attributes) and the methods (functions) that operate on that data into a single unit, typically a class. 
+It is the concept of bundling the data (attributes) and the methods (functions) that operate on that data into a single unit, typically a class.
 
 ```
 class BankAccount {
@@ -71,3 +70,7 @@ public class Main {
 }
 
 ```
+
+- Method Overriding: A child class overrides a method of its parent class.
+
+- Method Overloading (simulated): A function behaves differently based on the number or type of its arguments.
