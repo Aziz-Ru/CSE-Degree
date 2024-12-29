@@ -1,5 +1,7 @@
 # Docker
 
+Docker is an open-source platform that enables developers to automate the deployment, scaling, and management of applications in lightweight, portable containers.
+
 A container image is a standardized package that includes all of the files, binaries, libraries, and configurations to run a container.
 
 1. Images are immutable. Once an image is created, it can't be modified. You can only make a new image or add changes on top of it.
