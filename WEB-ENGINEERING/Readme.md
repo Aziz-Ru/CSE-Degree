@@ -2,6 +2,12 @@
 Web Engineering is the application of systematic and quantiﬁable approaches (concepts, methods, techniques, tools) to cost-effective requirements analysis, design, implementation, testing, operation, and maintenance of high-quality Web applications.
 Web Engineering is also the scientiﬁc discipline concerned with the study of these approaches.
 
+### Web Application
+Web application is a peice of software that run on server  is accessed by users through a web browser over the Internet or an intranet.
+
+### Web servers
+A web server is no more than a piece of software running on a machine and listening to requests from a specific port.
+
 The basic principles of Web Engineering can, however, be described similarly to those of Software Engineering
 
 • Clearly deﬁned goals and requirements
