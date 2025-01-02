@@ -62,4 +62,16 @@ The basic principles of Web Engineering can, however, be described similarly to 
 - This would facilitate knowledge management on the Web, in particular the linking and reuse of knowledge
 - increased interoperation on the semantic level and the possibility of automating tasks
 
+## What Is a WebE Framework?
+A framework 2 establishes the foundation for a complete Web engineering process by identifying a small number of framework activities that are applicable to all WebApp projects, regardless of their size or complexity. In addition, the framework encompasses a set of umbrella activities that are applicable across the entire WebE process.
+
+- Communication. Involves heavy interaction and collaboration with the customer (and other stakeholders) and encompasses requirements gathering and other related activities.
+
+- Planning, Establishes an incremental plan 3 for the WebE work. It describes the WebE actions that will occur, the technical tasks to be conducted, the risks that are likely, the resources that will be required, the work products to be produced, and a work schedule.
+
+- Modeling. Encompasses the creation of models that assist the developer and the customer to better understand WebApp requirements and the design that will achieve those requirements.
+
+- Construction. Combines both the generation of HTML, XML, Java, and similar code with testing that is required to uncover errors in the code.
+
+- Deployment. Delivers a WebApp increment 4 to the customer who evaluates it and provides feedback based on the evaluation
 
