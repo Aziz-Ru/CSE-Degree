@@ -3,6 +3,14 @@ Object-oriented programming aims to implement real-world entities like inheritan
 
 Objects are representations of real-life elements. Each object has a set of attributes that differentiates it from the rest of the objects of the same class, and is capable of a set of actions. A class is the definition of what an object looks like and what it can do, like a pattern for objects.
 
+## Class
+A Class is a user-defined blueprint or prototype from which objects are created. It represents the set of properties or methods that are common to all objects of one type. Using classes, you can create multiple objects with the same behavior instead of writing their code multiple times. 
+This includes classes for objects occurring more than once in your code. In general, class declarations can include these components in order: 
+
+- Modifiers: A class can be public or have default access (Refer to this for details).
+- Class name: The class name should begin with the initial letter capitalized by convention.
+- Body: The class body is surrounded by braces, { }.
+
 ### Public, Protected,Private
 
 - #### Public
