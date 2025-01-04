@@ -1,9 +1,7 @@
 ## OOP
+Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism, etc. in programming. The main aim of OOPs is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
 
-Objects are representations of real-life elements. Each object has a set of attributes
-that differentiates it from the rest of the objects of the same class, and is capable of a
-set of actions. A class is the definition of what an object looks like and what it can do,
-like a pattern for objects.
+Objects are representations of real-life elements. Each object has a set of attributes that differentiates it from the rest of the objects of the same class, and is capable of a set of actions. A class is the definition of what an object looks like and what it can do, like a pattern for objects.
 
 ### Public, Protected,Private
 
