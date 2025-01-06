@@ -33,4 +33,16 @@ A Loader loads all of code from memory and then the program is excuted.
 A compiler that runs on platform (A) and is capable of generating executable code for platform (B) is called a cross-compiler.
 #### Source-to-source Compiler
 A compiler that takes the source code of one programming language and translates it into the source code of another programming language is called a source-to-source compiler.
+
+## Compiler Design - Architecture
+A compiler can broadly be divided into two phases based on the way they compile.
+- Analysis Phase: Known as the front-end of the compiler, the analysis phase of the compiler reads the source program, divides it into core parts and then checks for lexical, grammar and syntax errors.
+- Synthesis Phase:Known as the back-end of the compiler, the synthesis phase generates the target program with the help of intermediate source code representation and symbol table.
+
+## Lexical Analysis
+Lexical analysis is the first phase of a compiler. It takes modified source code from language preprocessors that are written in the form of sentences. The lexical analyzer breaks these syntaxes into a series of tokens, by removing any whitespace or comments in the source code.
+
+
+
+
   
