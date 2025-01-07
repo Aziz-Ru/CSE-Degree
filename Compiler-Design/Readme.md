@@ -148,3 +148,51 @@ In a parse tree:
 ## Ambiguity
 
 A grammar G is said to be ambiguous if it has more than one parse tree (left or right derivation) for at least one string.
+
+## Left Recursion
+A grammar becomes left-recursive if it has any non-terminal ‘A’ whose derivation contains ‘A’ itself as the left-most symbol. A Grammar G (V, T, P, S) is left recursive if it has a production in the form.
+
+A → A α |β.
+
+Top-down parsers start parsing from the Start symbol, which in itself is non-terminal. So, when the parser encounters the same non-terminal in its derivation, it becomes hard for it to judge when to stop parsing the left non-terminal and it goes into an infinite loop.
+
+### Removal of Left Recursion
+The production
+```
+A => Aα | β
+```
+is converted into following productions
+```
+A => βA'
+A'=> αA' | ε
+```
+
+Let The Production Rule:
+```
+S => Aα | β 
+A => Sd
+```
+after applying the above algorithm, should become
+```
+S => Aα | β 
+A => Aαd | βd
+A  => βdA'
+A' => αdA' | ε
+```
+
+## Left Factoring
+If more than one grammar production rules has a common prefix string, then the top-down parser cannot make a choice as to which of the production it should take to parse the string in hand.
+
+If a top-down parser encounters a production like
+```
+A ⟹ αβ | α𝜸 | …
+```
+
+Then it cannot determine which production to follow to parse the string as both productions are starting from the same terminal (or non-terminal). To remove this confusion, we use a technique called left factoring.
+
+Left factoring transforms the grammar to make it useful for top-down parsers. In this technique, we make one production for each common prefixes and the rest of the derivation is added by new productions.
+
+```
+A => αA'
+A'=> β | 𝜸 | … 
+```
