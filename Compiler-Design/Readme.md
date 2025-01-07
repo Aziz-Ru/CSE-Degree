@@ -62,6 +62,15 @@ A lexical token is a sequence of characters that can be treated as a unit in the
 - #### Output generation:
 - In this final stage, the lexer generates the output of the lexical analysis process, which is typically a list of tokens
 
+ ### Representation of Token and Lexemes
+ |Lexeme|Token|Lexeme|Token|
+ |---|---|---|---|
+ |while|WHILE|a|IDENTIEFIER|
+  | ( |	LAPREN| 	= |	ASSIGNMENT|
+|>= 	|COMPARISON 	|– 	|ARITHMETIC|
+| ) 	|RPAREN 	|; 	|SEMICOLON|
+ 
+
 
 
 
