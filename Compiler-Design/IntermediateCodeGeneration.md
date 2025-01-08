@@ -50,6 +50,28 @@ For Example 2:
 |(4)|+|t2|t4|t5|
 |(5)|=|t5||a|
 
+## Triples
+
+This representation doesn’t make use of extra temporary variable to represent a single operation instead when a reference to another triple’s value is needed, a pointer to that triple is used. 
+
+For Example 2:
+
+|#|Op|arg1|arg2|
+|-|-|-|-|
+|(0)|uminus||c|
+|(1)|*|b|(0)|
+|(2)|uminus||c|
+|(3)|*|b|(2)|
+|(4)|+|(1)|(3)|
+|(5)|=|a|(4)|
+
+
+## Indirect Triples
+This representation is an enhancement over triples representation. It uses pointers instead of position to store results.
+
+
+
+
 
 
 
