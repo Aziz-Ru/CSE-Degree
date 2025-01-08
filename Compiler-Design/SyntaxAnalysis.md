@@ -73,6 +73,8 @@ Parsing Table:
 |-|-|-|
 |S|S->A,A->a||
 |A|A->a||
+
+
 Here, we can see that there are two productions in the same cell. Hence, this grammar is not feasible for LL(1) Parser.
 
 Example 3:
