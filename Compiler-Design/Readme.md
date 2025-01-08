@@ -39,5 +39,58 @@ A compiler can broadly be divided into two phases based on the way they compile.
 - Analysis Phase: Known as the front-end of the compiler, the analysis phase of the compiler reads the source program, divides it into core parts and then checks for lexical, grammar and syntax errors.
 - Synthesis Phase:Known as the back-end of the compiler, the synthesis phase generates the target program with the help of intermediate source code representation and symbol table.
 
+## Bootstrapping 
+Bootstrapping is a technique in compiler design that creates a self-compiling compiler, which is a compiler written in the same programming language it compiles.Bootstrapping is the process of writing a compiler for a programming language using the language itself
+
+## Grammer
+a finite set of formal rules that are generating syntactically correct sentences. The formal definition of grammar is that it is defined as four tuples − G=(V,T,P,S) G is a grammar, which consists of a set of production rules. It is used to generate the strings of a language.
+
+Terminal Symbols: Terminal symbols are those that are the components of the sentences generated using grammar
+
+Non-Terminal Symbols: Non-terminal symbols are those symbols that take part in the generation of the sentence but are not the component of the sentence. 
+
+## Context-Free Grammar
+
+A context-free grammar (CFG) consisting of a finite set of grammar rules is a quadruple (N, T, P, S) where
+
+  - N is a set of non-terminal symbols.
+
+  - T is a set of terminals where N ∩ T = NULL.
+
+  - P is a set of rules, P: N → (N ∪ T)*, i.e., the left-hand side of the production rule P does have any right context or left context.
+
+  - S is the start symbol.
+
+Context-free grammars (CFGs) are used to describe context-free languages. A context-free grammar is a set of recursive rules used to generate patterns of strings.
+
+## Chomsky Normal Form (CNF)
+Chomsky’s Normal Form Stands as CNF.A context free grammar is in CNF, if the production rules satisfy one of the following conditions 
+   - If there is start Symbol generating ε. Example − A-> ε
+   - If a non-terminal generates two non-terminals. Example − S->AB
+   - If a non-terminal generates a terminal. Example − S->a
+
+### Steps for converting CFG into CNF
+
+Step 1: Eliminate start symbol from the RHS. If the start symbol T is at the right-hand side of any production, create a new production as:S1 → S
+
+Step 2: In the grammar, remove the null, unit and useless productions
+
+Step 3: Eliminate terminals from the RHS of the production if they exist with other non-terminals or terminals. For example, production S → aA can be decomposed as:
+
+```
+    S → RA  
+    R → a  
+```
+
+Step 4: Eliminate RHS with more than two non-terminals. For example, S → ASB can be decomposed as:
+
+```
+    S → RS  
+    R → AS  
+```
+
+## Phases Of Compiler Design
+- Lexical Analysis:
+  
 
 
