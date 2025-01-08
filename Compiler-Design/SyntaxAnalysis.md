@@ -90,7 +90,7 @@ Parsing Table:
 |L|L->SL'||S->SL'||
 |L'||L'->)SL' </br> L'->ε|||
 
-
+Here, we can see that there are two productions in the same cell. Hence, this grammar is not feasible for LL(1) Parser.
 
 
 
