@@ -95,20 +95,130 @@ Parsing Table:
 Here, we can see that there are two productions in the same cell. Hence, this grammar is not feasible for LL(1) Parser.
 
 
+## LR Parser
+In the LR parsing, "L" stands for left-to-right scanning of the input.
+
+"R" stands for constructing a right most derivation in reverse.
+
+"K" is the number of input symbols of the look ahead used to make number of parsing decision.
+
+LR parsing is divided into four parts: LR (0) parsing, SLR parsing, CLR parsing and LALR parsing.
 
 
+LR parser algorithm :
+
+LR Parsing algorithm is the same for all the parser, but the parsing table is different for each parser.
+
+1. Input Buffer – It contains the given string, and it ends with a $ symbol.
+2. Stack – The combination of state symbol and current input symbol is used to refer to the parsing table in order to take the parsing decisions.
+
+Parsing Table : 
+
+Parsing table is divided into two parts- Action table and Go-To table. The action table gives a grammar rule to implement the given current state and current terminal in the input stream. 
+
+1. Shift Action- In shift action the present terminal is removed from the input stream and the state n is pushed onto the stack, and it becomes the new present state.
+
+2. Reduce Action- The number m is written to the output stream.
+
+## Augmented grammar 
+If G is a grammar with starting symbol S, then G’ (augmented grammar for G) is a grammar with a new starting symbol S‘ and productions  S’-> .S .
+
+## LR Grammer
+```
+S–>AA
+A–>aA|b
+```
+STEP 1- Find augmented grammar –
+    -  S’–>.S      [0th production]
+    -  S–>.AA    [1st production]
+    -  A–>.aA    [2nd production]
+    -  A–>.b      [3rd production]
+    
+STEP 2 –  Find LR(0) collection of items
+
+- RULE – if any nonterminal has ‘ . ‘ preceding it, we have to write all its production and add ‘ . ‘ preceding each of its-production.
+
+- RULE –  from each state to the next state, the ‘ . ‘ shifts to one place to the right.
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20210621170906/11.png"/>
+
+- In the figure, I0 consists of augmented grammar.
+- Io goes to I1 when  ‘ . ‘ of 0th production is shifted towards the right of S(S’->S.). This state is the accepted state.S is seen by the compiler
+- Io goes to I2 when  ‘ . ‘ of 1st production is shifted towards the right (S->A.A) . A is seen by the compiler
+- I0 goes to I3 when  ‘ . ‘ of the 2nd production is shifted towards the right (A->a.A) . a is seen by the compiler.
+- I0 goes to I4 when  ‘ . ‘ of the 3rd production is shifted towards the right (A->b.) . b is seen by the compiler.
+- I2 goes to I5 when  ‘ . ‘ of 1st production is shifted towards the right (S->AA.) . A is seen by the compiler
+- I2 goes to I4 when  ‘ . ‘ of 3rd production is shifted towards the right (A->b.) . b is seen by the compiler.
+- I2 goes to I3 when  ‘ . ‘ of the 2nd production is shifted towards the right (A->a.A) . a is seen by the compiler.
+- 3 goes to I4 when  ‘ . ‘ of the 3rd production is shifted towards the right (A->b.) . b is seen by the compiler.
+- I3 goes to I6 when  ‘ . ‘ of 2nd production is shifted towards the right (A->aA.) . A is seen by the compiler
 
 
+- STEP3: Making Parsing Table from DFA.Parssing Table diffrent from LR(0) SLR,CLR,LALR.
+  defining 2 functions: goto[list of non-terminals] and action[list of terminals] in the parsing table.
 
+  - $ is by default a terminal that takes the accepting state.
+  - 0,1,2,3,4,5,6 denotes I0,I1,I2,I3,I4,I5,I6
+  - I0 gives A in I2, so 2 is added to the A column and 0 rows.
+  - I0 gives S in I1, so 1 is added to the S column and 1 row.
+  - similarly, 5 is written in  A column and 2nd row, 6 is written in A column and 3 rows.
+  - I0 gives an in I3 to .so S3(shift 3) is added to a column and 0 rows.
+  - I0 gives b in I4, so S4(shift 4) is added to the b column and 0 rows.
+ 
+  - I4 is reduced state as ‘ . ‘ is at the end. I4 is the 3rd production of grammar. So write r3(reduce 3) in terminals.
+  - I5 is reduced state as ‘ . ‘ is at the end. I5 is the 1st production of grammar. So write r1(reduce 1) in terminals.
+  - I6 is reduced state as ‘ . ‘ is at the end. I6 is the 2nd production of grammar. So write r2(reduce 2) in terminals.
+  
 
+## LR(0)
 
+- Reduce Production rule goes to all the non terminal
+- If Grammer has Shift Reduce Conflict that is not LR(0) Grammer.
 
+## SLR(1)
 
+- Uses follow sets of non-terminals as lookahead to resolve conflicts.
+- More powerful than LR(0) but less powerful than CLR and LALR.
+- Cannot handle all ambiguities in complex grammars.
+  
+## CLR(1)
+- Uses specific lookahead symbols for each item, derived during the construction of the parse table.
 
+The CLR parser stands for canonical LR parser.It is a more powerful LR parser.It makes use of lookahead symbols. This method uses a large set of items called LR(1) items.The main difference between LR(0)  and LR(1) items is that, in LR(1) items, it is possible to carry more information in a state, which will rule out useless reduction states.
 
+### How to add lookahead with the production?
 
+#### CASE 1
+```
+A->∝.BC, a [0th production.]
+```
+Suppose this is the 0th production.Now, since ‘ . ‘ precedes B,so we have to write B’s productions as well.
+```
+B->.D [1st production]
+```
+Suppose this is B’s production.
 
+The look ahead of this production is given as we look at previous productions ie 0th production. Whatever is after B, we find FIRST(of that value).that is the lookahead of 1st production. that is the lookahead of 1st production.So,here in 0th production, after B, C is there. assume FIRST(C)=d, then 1st production become
+```
+B->.D, d
+```
+### CASE 2 
+```
+A->∝.B, a 
+```
+Here, we can see there’s nothing after B. So the lookahead of 0th production will be the lookahead of 1st production.
 
+```
+B->.D, a
+```
 
+### CASE 3 –
+Assume a production A->a|b
+```
+A->a,$ [0th production]
+A->b,$ [1st production]
+```
+Here, the 1st production is a part of the previous production, so the lookahead will be the same as that of its previous production.
 
-
+## LALR
+LALR Parser is lookahead LR parser. It is  the most powerful parser which can handle large classes of grammar. The size of CLR parsing table is quite large as compared to other parsing table. LALR reduces the size of this table.
