@@ -41,11 +41,12 @@ Follow is a function that gives a set of terminal that follows a non-terminal in
 Example 1:
 |Production Rule|First|Follow|
 |---------------|-----|------|
-|E->TE'|{id,(}|{$,)}|
-|E'->+TE'\|ε|{+,ε}|Follow(E)=>{$,)}|
-|T->FT'|{id,(}|{+,$,)}
-|T'->*FT'\|ε|{*,ε}|{+,$,)}
-|F->id\|(E)|{id,(}|{*,+,$,)}|
+|E->TE'|id,(|$,)|
+|E'->+TE'\|ε|+,ε|Follow(E)=>$,)|
+|T->FT'|id,(|+,$,)|
+|T'->*FT'\|ε|*,ε|+,$,)|
+|F->id\|(E)|id,(|*,+,$,)|
+This is a LL(1) Parser
 
 ## Construction of LL(1) Parsing Table
 
@@ -53,3 +54,59 @@ Example 1:
   - No Left Recursion: Avoid recursive definitions like A -> A + b.
   - Unambiguous Grammar: Ensure each string can be derived in only one way.
   - Left Factoring: Make the grammar deterministic, so the parser can proceed without guessing.
+### Algorithm to Construct LL(1) Parsing Table
+
+- Calculate First() and Follow() for all non-terminals.
+- Make a parser table.
+  - null productions are put under the Follow set of that symbol and all the remaining productions lie under the First of that symbol. 
+
+**Every grammar is not feasible for LL(1) Parsing table. It may be possible that one cell may contain more than one production.**
+
+Example 2:
+|Production Rule| First|Follow|
+|-|-|-|
+|S->A/a|a|$|
+|A->a|a|$|
+
+Parsing Table:
+||a|$|
+|-|-|-|
+|S|S->A,A->a||
+|A|A->a||
+Here, we can see that there are two productions in the same cell. Hence, this grammar is not feasible for LL(1) Parser.
+
+Example 3:
+
+|Production Rule|First|Follow|
+|-|-|-|
+|S->(L)/a|(,a|$,)|
+|L->SL'|(,a|)|
+|L'->)SL'/ε|),ε|)|
+
+Parsing Table:
+||(|)|a|$|
+|-|-|-|-|-|
+|S|S->(L)||S->a||
+|L|L->SL'||S->SL'||
+|L'||L'->)SL' </br> L'->ε|||
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
