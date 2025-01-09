@@ -63,6 +63,11 @@ Semantic attributes may be assigned to their values from their domain at the tim
 - synthesized attributes:These attributes get values from the attribute values of their child nodes.
 -  inherited attributes: inherited attributes can take values from parent and/or siblings. As in the following production,
 
+## What are Annotated Parse Trees?
+
+The parse tree containing the values of attributes at each node for given input string is called annotated or decorated parse tree. 
+
+
 ```
 S → ABC
 ```
@@ -79,6 +84,7 @@ When a terminal is reduced to its corresponding non-terminal according to gramma
 Semantic analyzer receives AST (Abstract Syntax Tree) from its previous stage (syntax analysis).Semantic analyzer attaches attribute information with AST, which are called Attributed AST.
 
 Attributes are two tuple value, <attribute name, attribute value>
+
 
 ## S-attributed SDT
 
