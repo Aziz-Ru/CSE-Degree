@@ -5,6 +5,27 @@ Semantic Analysis is the third phase of Compiler. Semantic Analysis makes sure t
 Semantics of a language provide meaning to its constructs, like tokens and syntax structure. Semantics help interpret symbols, their types, and their relations with each other. 
 Semantic analysis judges whether the syntax structure constructed in the source program derives any meaning or not.
 
+## SDT (Syntax Directed Translation)
+Syntax Directed Translation (SDT) is a method in compiler design where the translation of a programming language's source code is driven by the grammar of the language.
+
+```
+E → E1 + T { print("+") }
+```
+
+Example:
+```
+E → E1 + T   { E.val = E1.val + T.val }
+E → T        { E.val = T.val }
+T → id       { T.val = lookup(id) }
+```
+
+
+
+SDT with Embedded Actions:Semantic actions are embedded directly within the production rules.
+
+
+## Syntax-Directed Definitions (SDD)
+Focuses on the association of attribute rules with grammar productions without embedding actions.
 
 ```
 CFG + semantic rules = Syntax Directed Definitions
@@ -38,6 +59,7 @@ E → E + T { E.value = E.value + T.value }
 The right part of the CFG contains the semantic rules that specify how the grammar should be interpreted. Here, the values of non-terminals E and T are added together and the result is copied to the non-terminal E.
 
 Semantic attributes may be assigned to their values from their domain at the time of parsing and evaluated at the time of assignment or conditions. Based on the way the attributes get their values, they can be broadly divided into two categories : 
+
 - synthesized attributes:These attributes get values from the attribute values of their child nodes.
 -  inherited attributes: inherited attributes can take values from parent and/or siblings. As in the following production,
 
