@@ -80,5 +80,9 @@ Semantic analyzer receives AST (Abstract Syntax Tree) from its previous stage (s
 
 Attributes are two tuple value, <attribute name, attribute value>
 
+## S-attributed SDT
 
+If an SDT uses only synthesized attributes, it is called as S-attributed SDT. These attributes are evaluated using S-attributed SDTs that have their semantic actions written after the production (right hand side).
 
+## L-Attributed SDT
+ttributes in an L-attributed SDT can be inherited attributes or synthesized attributes.
