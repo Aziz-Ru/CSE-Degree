@@ -127,4 +127,9 @@ Associativity determines the order in which operators of the same precedence are
 
 ## Phases Of Compiler Design
 
-- Lexical Analysis:
+- Lexical Analysis
+- Syntax Analysis
+- Semantic Analysis
+- Intermediate Code Generation
+- Code Generation
+- Code Optimization
