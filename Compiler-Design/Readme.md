@@ -13,9 +13,22 @@ There are sevarel stages in the phase in the process of compileing-
 
 ## Types Of Compiler
 
-- **Single Pass Compiler:** Where All Phase of the compiler are present inside of a single module it's simply called single pass compiler.
-- **Two Pass Compiler:** When all phase of two pass compiler translated into twice one from front end and another from back end that is known as two pass compiler.
+- **Single Pass Compiler:** A single-pass compiler processes the source code once, going through the input sequentially to perform lexical analysis, syntax analysis, semantic analysis, and code generation in a single pass.Where All Phase of the compiler are present inside of a single module it's simply called single pass compiler.
+- **Two Pass Compiler:** When all phase of two pass compiler translated into twice one from front end and another from back end that is known as two pass compiler.A two-pass compiler processes the source code in two separate passes over the input.
+- 
 - **Multi Pass Compiler:** When several intermediate codes are created in a program and syntax tree is a processed many times it's called multi pass compiler.
+
+
+|Feature	|Single-Pass Compiler	|Two-Pass Compiler|
+|-|-|-|
+|Number of Passes	|1	|2|
+|Speed	|Faster	|Slower (requires two scans)|
+|Optimization	|Minimal	|Better optimization possible|
+|Forward References	|Difficult to handle	|Easily handled|
+|Intermediate Code	|Usually not generated	|Generated in the first pass|
+|Complexity	S|impler design	|More complex design|
+|Suitable For	|Simple languages	|Complex languages with advanced features|
+
 
 ## Language Processing System
 
