@@ -156,6 +156,19 @@ four consecutive zero-level voltages are replaced with a sequence of 000V or B00
 1. If the number of nonzero pulses after the last substitution is odd, the substitution pattern will be 000V, which makes the total number of nonzero pulses even.
 2. If the number of nonzero pulses after the last substitution is even, the substitution pattern will be B00V, which makes the total number of nonzero pulses even.
 
+# ANALOG-TO-DIGITAL CONVERSION
+
+## Pulse Code Modulation (PCM)
+The most common technique to change an analog signal to digital data (digitization) is called pulse code modulation (PCM). A PCM encoder has three processes
+
+1. The analog signal is sampled.
+2. The sampled signal is quantized.
+3. The quantized values are encoded as streams of bits.
+
+
+
+
+
 
 
 
