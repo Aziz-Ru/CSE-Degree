@@ -165,14 +165,20 @@ The most common technique to change an analog signal to digital data (digitizati
 2. The sampled signal is quantized.
 3. The quantized values are encoded as streams of bits.
 
+#### Sampling
+The analog signal is sampled every Ts s, where Ts is the sample interval or period. The inverse of the sampling interval is called the sampling rate or sampling frequency and denoted by fs, where fs = 1/Ts. There are three sampling methods—ideal, natural, and flat-top
+
+According to the Nyquist theorem, the sampling rate must be at least 2 times the highest frequency contained in the signal.
+
+#### Quantization
+
+The result of sampling is a series of pulses with amplitude values between the maximum and minimum amplitudes of the signal. The set of amplitudes can be infinite with nonintegral values between the two limits. These values cannot be used in the encoding process. The following are the steps in quantization:
 
 
+# DIGITAL-TO-ANALOG CONVERSION
+Digital-to-analog conversion is the process of changing one of the characteristics of an analog signal based on the information in digital data
 
 
-
-
-
-
-
-
+# ANALOG-TO-ANALOG CONVERSION
+Analog-to-analog conversion can be accomplished in three ways: amplitude modulation (AM), frequency modulation (FM), and phase modulation (PM).
 
