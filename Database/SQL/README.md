@@ -1,4 +1,50 @@
-# MySQL Data Types
+# SQL Over View
+SQL (Structured Query Language) is a language to operate databases; it includes Database Creation, Database Deletion, Fetching Data Rows, Modifying & Deleting Data rows, etc.SQL stands for Structured Query Language which is a computer language for storing, manipulating and retrieving data stored in a relational database. 
+
+## How SQL Works?
+There are various components included in this process. These components are -
+- Query Dispatcher
+- Optimization Engines
+- Classic Query Engine
+- SQL Query Engine, etc.
+
+<img src="https://github.com/user-attachments/assets/959fd6bd-ddca-48a6-b371-9f81e8cc3745"/>
+
+## What is RDBMS?
+
+RDBMS stands for Relational Database Management System.A Relational database management system (RDBMS) is a database management system (DBMS) that is based on the relational model as introduced by E. F. Codd in 1970.
+
+## What is a Table?
+The data in an RDBMS is stored in database objects known as tables. This table is basically a collection of related data entries and it consists of numerous columns and rows.
+
+## What is a Field?
+Every table is broken up into smaller entities called fields. A field is a column in a table that is designed to maintain specific information about every record in the table.
+## What is a Record or a Row?
+A record is also called as a row of data is each individual entry that exists in a table.
+
+## SQL Constraints
+Constraints are the rules enforced on data columns on a table.These are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the database.
+
+1. NOT NULL Constraint ->Ensures that a column cannot have a NULL value.
+2. DEFAULT Constraint ->Provides a default value for a column when none is specified.
+3. UNIQUE Key ->Ensures that all the values in a column are different.
+4. PRIMARY Key ->Uniquely identifies each row/record in a database table.
+5. FOREIGN Key ->Uniquely identifies a row/record in any another database table.
+6. CHECK Constraint ->Ensures that all values in a column satisfy certain conditions.
+7. INDEX Constraint ->Used to create and retrieve data from the database very quickly.
+
+## Data Integrity
+- Entity Integrity − This ensures that there are no duplicate rows in a table.
+- Domain Integrity − Enforces valid entries for a given column by restricting the type, the format, or the range of values.
+- Referential integrity − Rows cannot be deleted, which are used by other records.
+- User-Defined Integrity − Enforces some specific business rules that do not fall into entity, domain or referential integrity.
+
+
+## Database Normalization
+Database normalization is the process of efficiently organizing data in a database.There are two reasons of this normalization process −
+1. Eliminating redundant data, for example, storing the same data in more than one table.
+2. Ensuring data dependencies make sense.
+   
 
 ## STRING DATA TYPES
 
