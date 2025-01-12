@@ -4,9 +4,9 @@
 
 Data is a collection of discrete or continuous values that:
 
-• convey information
-• describing the quantity, quality, fact, statistics, other basic units of meaning,or
-• simply sequences of symbols that may be further interpreted formally.
+- convey information
+- describing the quantity, quality, fact, statistics, other basic units of meaning,or
+- simply sequences of symbols that may be further interpreted formally.
 
 Data communications are the exchange of data between two devices via some form of transmission medium such as a wire cable.The effectiveness
 of a data communications system depends on four fundamental characteristics: 
