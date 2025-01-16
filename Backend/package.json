@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "## Communication Protocols 1. TCP,UDP,HTTP,Websocket,WebRTC, 2. Why TCP slow? 3. How http works? 4. How Websocket works?",
+  "main": "TCPServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
