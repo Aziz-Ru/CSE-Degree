@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/70c15d2f-546c-4bb9-9320-299961e3218d)# Network Model
+
+# Network Model
 Networking engineering is a complicated task, which involves software, firmware, chip level engineering, hardware, and electric pulses. To ease network engineering, the whole networking concept is divided into multiple layers. Each layer is involved in some particular task and is independent of all other layers.
 
 ## OSI Model
@@ -11,6 +12,10 @@ Open System Interconnect is an open standard for all communication systems. OSI 
 5. Network Layer: This layer is responsible for address assignment and uniquely addressing hosts in a network.
 6. Data Link Layer: This layer is responsible for reading and writing data from and onto the line. Link errors are detected at this layer.
 7. Physical Layer: This layer defines the hardware, cabling wiring, power output, pulse rate etc.
+
+</br>
+<img src="https://github.com/user-attachments/assets/70c15d2f-546c-4bb9-9320-299961e3218d"/>
+</br>
 
 ## Internet Model
 Internet uses TCP/IP protocol suite, also known as Internet suite. This defines Internet Model which contains four layered architecture. 
