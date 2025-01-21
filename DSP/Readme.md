@@ -68,3 +68,5 @@ Impulse response is defined as the output produced by a system when an impulse s
 A time invariant system is a type of system whose response does not change with time. Thus, the response of a time invariant system to an input is independent of the time.
 #### Stability
 Stability is a property of a system which states that the output of the system remains bounded for a given bounded input. Thus, a stable system satisfies the condition of BIBO (Bounded Input and Bounded Output).
+
+- [Signals-Definition](https://github.com/Aziz-Ru/CSE-Degree/blob/main/DSP/Signals-Definition.md)
