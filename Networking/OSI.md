@@ -28,7 +28,7 @@ The network layer works for the transmission of data from one host to the other 
   - IP (Internet Protocol) addresses
   - Protocols: IP, ICMP, ARP
 
-# Transport Layer – Layer 4
+## Transport Layer – Layer 4
 Ensures reliable data transfer between end systems, including error recovery and flow control.
 The transport layer provides services to the application layer and takes services from the network layer. The data in the transport layer is referred to as Segments. It is responsible for the end-to-end delivery of the complete message. The transport layer also provides the acknowledgment of the successful data transmission and re-transmits the data if an error is found.
 
@@ -40,7 +40,7 @@ At the sender’s side: The transport layer receives the formatted data from the
   - TCP (Transmission Control Protocol)
   - UDP (User Datagram Protocol)
 
-# Session Layer – Layer 5
+## Session Layer – Layer 5
 This layer is responsible for the establishment of connection, maintenance of sessions, and authentication, and also ensures security.
 
 ### Examples:
@@ -51,7 +51,7 @@ This layer is responsible for the establishment of connection, maintenance of se
 ### Key Concepts:
 Session management, synchronization.
 
-# Presentation Layer – Layer 6
+## Presentation Layer – Layer 6
 The presentation layer is also called the Translation layer. The data from the application layer is extracted here and manipulated as per the required format to transmit over the network. serialized the data.
 Translates data between the application layer and the network format, ensuring data is in a readable format.
 
@@ -61,7 +61,7 @@ Translates data between the application layer and the network format, ensuring d
   - Data compression
   - Encoding (e.g., JSON, XML)
     
-# Application Layer – Layer 7
+## Application Layer – Layer 7
 At the very top of the OSI Reference Model stack of layers, we find the Application layer which is implemented by the network applications. These applications produce the data to be transferred over the network. This layer also serves as a window for the application services to access the network and for displaying the received information to the user. 
 
 ### Examples:
