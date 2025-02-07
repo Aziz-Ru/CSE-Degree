@@ -10,6 +10,8 @@ User Datagram Protocol (UDP) is a Transport Layer or layer 4 protocol.UDP is a p
 - 16 bit or  2 byte for source port
 - 16 bit or  2 byte for destination port
 
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240226104635/UDP-header.jpg"/>
+
 ### UDP usecases
 - Video streaming
 - VPN
