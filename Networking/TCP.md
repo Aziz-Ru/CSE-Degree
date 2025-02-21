@@ -32,6 +32,9 @@ Internet Protocol (IP) is a method that is useful for sending data from one devi
 It is responsible for addressing and routing packets of data so they can travel from the sender to the correct destination across multiple networks. Every device contains a unique IP Address that helps 
 it communicate and exchange data across other devices present on the internet.
 
+## How TCP & IP Work Together
+TCP (Transmission Control Protocol) and IP (Internet Protocol) are not the same, but they work together in the TCP/IP suite to enable internet communication. TCP ensures reliable data transmission by managing the breakdown and reassembly of data packets, while IP handles addressing and routing these packets to the correct destination.
+
 ## Features of TCP
 
 ### Segment Numbering System: 
@@ -46,3 +49,56 @@ Flow control limits the rate at which a sender transfers data. This is done to e
 TCP implements an error control mechanism for reliable data transfer. Error control is byte-oriented. Segments are checked for error detection. 
 ### Congestion Control: 
 TCP takes into account the level of congestion in the network. Congestion level is determined by the amount of data sent by a sender.
+
+## TCP Header
+TCP Header contains the important information for the proper delivery of the data. It contains port numbers, acknowledgement numbers, flags, etc.
+
+
+# Services and Segment structure in TCP
+- Process-to-Process Communication
+- Stream oriented
+- Full-duplex service
+
+## TCP Segment structure 
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/TCPSegmentHeader-1.png"/>
+
+
+The header of a TCP segment can range from 20-60 bytes. 40 bytes are for options. If there are no options, a header is 20 bytes else it can be of upmost 60 bytes. 
+
+### Source Port Address – 
+A 16-bit field that holds the port address of the application that is sending the data segment. 
+
+### Destination Port Address – 
+A 16-bit field that holds the port address of the application in the host that is receiving the data segment. 
+
+
+### Sequence Number – 
+A 32-bit field that holds the sequence number, i.e, the byte number of the first byte that is sent in that particular segment
+
+### Acknowledgement Number – 
+A 32-bit field that holds the acknowledgement number, i.e, the byte number that the receiver expects to receive next. It is an acknowledgement for the previous bytes being received successfully. 
+
+### Header Length (HLEN) – 
+This is a 4-bit field that indicates the length of the TCP header by a number of 4-byte words in the header, i.e if the header is 20 bytes(min length of TCP header), then this field will hold 5 (because 5 x 4 = 20) and the maximum length: 60 bytes, then it’ll hold the value 15(because 15 x 4 = 60). Hence, the value of this field is always between 5 and 15. 
+
+### Control flags – 
+These are 6 1-bit control bits that control connection establishment, connection termination, connection abortion, flow control, mode of transfer etc. Their function is: 
+
+- URG: Urgent pointer is valid
+- ACK: Acknowledgement number is valid( used in case of cumulative acknowledgement)
+- PSH: Request for push
+- RST: Reset the connection
+- SYN: Synchronize sequence numbers
+- FIN: Terminate the connection
+
+### Window size – 
+This field tells the window size of the sending TCP in bytes. 
+
+### Checksum – 
+This field holds the checksum for error control. It is mandatory in TCP as opposed to UDP. 
+
+
+
+
+
