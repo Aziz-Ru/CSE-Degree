@@ -1,0 +1,17 @@
+{
+  "name": "sharding",
+  "version": "1.0.0",
+  "description": "Sharding is like startegically partitioning a large table into smaller table across multiple database servers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "consistent-hash": "^1.2.2",
+    "express": "^5.1.0",
+    "postgres": "^3.4.5"
+  }
+}
