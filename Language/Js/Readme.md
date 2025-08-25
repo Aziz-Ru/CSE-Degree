@@ -1,56 +1,37 @@
 # Node A Javascript Runtime
 
-Node.js uses the concept of module as a fundamental mean to structure the code of a
-program.
+Node.js has revolutionized server-side JavaScript development, enabling developers to build scalable and high-performance network applications. Its unique architecture, particularly its single-threaded, event-driven model, sets it apart from traditional multithreaded server environments. This document delves into the core components of Node.js, explaining how it efficiently handles concurrent requests.
 
-This principle has its roots in the Unix philosophy, particularly in two of its
-precepts, which are as follows:
-
+This principle has its roots in the Unix philosophy, particularly in two of its precepts, which are as follows:
 - "Small is beautiful."
 - "Make each program do one thing well."
 
-Having smaller and more focused modules empowers everyone to share or reuse
-even the smallest piece of code; it's the Don't Repeat Yourself (DRY) principle
-applied at a whole new level.
+Having smaller and more focused modules empowers everyone to share or reuse even the smallest piece of code; it's the Don't Repeat Yourself (DRY) principle applied at a whole new level.
 
-Keep It Simple, Stupid (KISS) principle? Or the
-famous quote:
-"Simplicity is the ultimate sophistication."
+- Keep It Simple, Stupid (KISS) principle? Or the famous quote: "Simplicity is the ultimate sophistication."_Leonardo da vancy_
 
-- Leonardo da vancy
+**we will analyze the reactor pattern, which is the heart of the Node.js asynchronous nature.**
 
-**we will analyze the reactor pattern, which is the heart of the Node.js
-asynchronous nature.**
+## Reactor Pattern
+Reactor Pattern is used to avoid the blocking of the Input/Output operations. It provides us with a handler that is associated with I/O operations. When the I/O requests are to be generated, they get submitted to a demultiplexer, which handles concurrency in avoiding the blocking of the I/O mode and collects the requests in form of an event and queues those events. There are two ways in which I/O operations are performed:
 
-## Non-blocking I/O
+## Blocking I/O
 
-In a blocking I/O operation, the program waits until the operation completes before continuing with the next
-line of code. The execution is paused or "blocked" during this time.
+In a blocking I/O operation, the program waits until the operation completes before continuing with the next line of code. The execution is paused or "blocked" during this time.
 
 ## Non-Blocking I/O
 
-In a non-blocking I/O operation, the program initiates the operation and continues executing other tasks without waiting for the operation to complete.
-Instead of waiting, it gets notified when the response or data is ready (via a callback, event loop, or future/promise).
+In a non-blocking I/O operation, the program initiates the operation and continues executing other tasks without waiting for the operation to complete.Instead of waiting, it gets notified when the response or data is ready (via a callback, event loop, or future/promise).
 
 ## Event demultiplexing
 
 In digital circuits, a demultiplexer (or “demux”) is a device that takes a single input signal and routes it to one of several outputs.
 
 In Node.js, the idea is adapted to manage I/O operations and events. The Event Demultiplexer in Node.js operates within the Reactor
-pattern—a core architectural design that enables non-blocking, asynchronous I/O.
-Node.js uses an event-driven architecture where multiple I/O tasks can be handled concurrently, even if running on a single thread.
+pattern—a core architectural design that enables non-blocking, asynchronous I/O. Node.js uses an event-driven architecture where multiple I/O tasks can be handled concurrently, even if running on a single thread.
 
-most modern operating systems provide a native mechanism
-to handle concurrent, non-blocking resources in an efficient way; this mechanism
-is called synchronous event demultiplexer or event notification interface
-This
-component collects and queues I/O events that come from a set of watched
-resources, and block until new events are available to process.
-
-## The reactor pattern
-
-The Reactor pattern is the backbone of Node.js, and the Event Demultiplexer is an important part of this pattern.
-It enables Node.js to handle multiple I/O operations concurrently without creating multiple threads, making it highly efficient and scalable.
+Most modern operating systems provide a native mechanism to handle concurrent, non-blocking resources in an efficient way; this mechanism is called _synchronous event demultiplexer or event notification interface._This component collects and queues I/O events that come from a set of watched
+resources, and block until new events are available to process. **I/O polling means checking the status of I/O operations (read/write/connection) repeatedly until they are ready, without blocking the main thread.**
 
 ### How It Works in Node.js
 
@@ -123,27 +104,15 @@ The Event Demultiplexer (via libuv) completes the low-level I/O operations, but 
 
 ## The non-blocking I/O engine of Node.js – libuv
 
-Each operating system has its own interface for the Event Demultiplexer:
-epoll on Linux, kqueue on Mac OS X, and I/O Completion Port API (IOCP) on
-Windows. Besides that, each I/O operation can behave quite differently depending
-on the type of the resource, even within the same OS. For example, in Unix, regular
-filesystem files do not support non-blocking operations, so, in order to simulate a
-non-blocking behavior, it is necessary to use a separate thread outside the Event
-Loop. All these inconsistencies across and within the different operating systems
-required a higher-level abstraction to be built for the Event Demultiplexer. This is
-exactly why the Node.js core team created a C library called libuv, with the
-objective to make Node.js compatible with all the major platforms and normalize
-the non-blocking behavior of the different types of resource; libuv today represents
-the low-level I/O engine of Node.js.
+Each operating system has its own interface for the Event Demultiplexer: `epoll on Linux`, `kqueue on Mac OS`, and I/O Completion Port API (IOCP) on
+Windows. Besides that, each I/O operation can behave quite differently depending on the type of the resource, even within the same OS. For example, in Unix, regular filesystem files do not support non-blocking operations, so, in order to simulate a non-blocking behavior, it is necessary to use a separate thread outside the Event Loop. All these inconsistencies across and within the different operating systems required a higher-level abstraction to be built for the Event Demultiplexer. This is exactly why the Node.js core team created a C library called libuv, with the
+objective to make Node.js compatible with all the major platforms and normalize the non-blocking behavior of the different types of resource; libuv today represents the low-level I/O engine of Node.js.
 
-libuv also implements the reactor
-pattern, thus providing an API for creating event loops, managing the event queue,
-running asynchronous I/O operations, and queuing other types of tasks.
+libuv also implements the reactor pattern, thus providing an API for creating event loops, managing the event queue, running asynchronous I/O operations, and queuing other types of tasks.
 
 ## The recipe for Node.js
 
-The reactor pattern and libuv are the basic building blocks of Node.js, but we need
-the following three other components to build the full platform
+The reactor pattern and libuv are the basic building blocks of Node.js, but we need the following three other components to build the full platform
 
 •A set of bindings responsible for wrapping and exposing libuv and other low-level functionality to JavaScript.
 
