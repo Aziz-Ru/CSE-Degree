@@ -15,7 +15,7 @@ This includes classes for objects occurring more than once in your code. In gene
 
 - #### Public
 
-  The member is accessible from anywhere, both inside and outside the class.For members that need to be universally accessible.
+  The member is accessible from anywhere, both inside and outside the class.For members that need to be universally accessible by creating an instance.
 
 - #### Private
 
@@ -23,8 +23,13 @@ The member is only accessible within the class itself. It is not accessible in d
 
 - #### protected
 
-The member is accessible within the class and its derived/child classes, but not outside the class.
-protected properties in object-oriented programming are accessible to child classes through inheritance, but not directly accessible via objects.
+The member is accessible within the class and its derived/child classes, but not outside the class. protected properties in object-oriented programming are accessible to child classes through inheritance, but not directly accessible via objects.protected = visible inside the same package + visible to subclasses (even in other packages).
+
+That means:
+
+1. If you are in the same package, protected looks almost like public. You can access it through an instance, no problem.
+
+2. If you are in a different package, you can access a protected member only if your class extends the original class.
 
 ## Static properties and methods
 
@@ -80,3 +85,4 @@ public class Main {
 - Method Overriding: A child class overrides a method of its parent class.
 
 - Method Overloading (simulated): A function behaves differently based on the number or type of its arguments.
+
