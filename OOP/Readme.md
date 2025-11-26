@@ -164,6 +164,8 @@ The member is only accessible within the class itself. It is not accessible in d
 
 ### super() — Calling Parent Constructor
   - Every constructor calls super() implicitly if not written
+  - Automatically added if parent has no-arg constructor
+  - You cannot call this and super in the same constructor; only one first statement is allowed.
 
 
 |Question|Your Answer|
@@ -233,5 +235,6 @@ public class Main {
 - Method Overriding: A child class overrides a method of its parent class.
 
 - Method Overloading (simulated): A function behaves differently based on the number or type of its arguments.
+
 
 
