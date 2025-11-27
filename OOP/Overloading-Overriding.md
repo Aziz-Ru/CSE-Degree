@@ -110,3 +110,26 @@ public class Test {
 - The Real Answer: This Code Does NOT Compile!
 - Reference type = A → only sees show(int)
 - 5L = long → cannot match int → compile error
+
+## What is output?
+
+```
+class T {
+    void m(Object o) { System.out.println("Object"); }
+    void m(String s) { System.out.println("String"); }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        T t = new T();
+        t.m(null);
+    }
+}
+
+```
+- When calling an overloaded method, Java chooses the most specific method that matches the argument type.
+- null can match both:
+    -    m(Object o)
+    -    m(String s)
+
+- But String is a child of Object.
