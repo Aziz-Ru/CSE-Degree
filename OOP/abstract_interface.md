@@ -12,6 +12,8 @@
 - Abstract class itself is template
 -  is allocated only when child object is created
 -  Child object stores all inherited fields and methods
+  
+### Choose abstract class when many child classes will share the same logic.
 
 # Interfaces
 - Interface is a pure contract for classes
@@ -58,7 +60,7 @@ public class Test {
 - Methods are abstract by default (unless default/static)
 - Can have multiple interfaces implemented (multiple inheritance)
 - Interfaces do not have constructors
-
+## All classes that implement the interface must provide their own implementation.
 ## Advanced / Tricky Points
 
 - Abstract class can implement interface → can provide some method implementation
