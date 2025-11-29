@@ -27,6 +27,14 @@ An exception is an unwanted event that stops the normal flow of a program.
 - Not recoverable.
 - Examples: StackOverflowError,OutOfMemoryError
 
+|Keyword|Used For|
+|------|--------|
+|try|Block that might throw|
+|catch|Handle specific exception|
+|finally|Always runs,not run if JVM shuts down|
+|throw|Manually throw|
+|throws|Declare in method|
+|try-with-resources|Auto-close resources|
 ## try-catch
 ```try {
     int a = 10 / 0;
